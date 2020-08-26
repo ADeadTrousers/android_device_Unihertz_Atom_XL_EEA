@@ -35,6 +35,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.mt6771:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6771
 
+# NFC stack (AOSP)
+PRODUCT_PACKAGES += \
+    NfcNci
+
 # Init
 PRODUCT_PACKAGES += \
     init.mt6771.rc \
