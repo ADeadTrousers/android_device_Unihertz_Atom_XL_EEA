@@ -15,6 +15,18 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_BUILD_PRODUCT_IMAGE := true
 
+# A/B
+AB_OTA_UPDATER := false
+
+# Audio
+PRODUCT_PACKAGES += \
+    audio.a2dp.default \
+    libaacwrapper
+
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
+
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
@@ -22,6 +34,10 @@ PRODUCT_PACKAGES += \
 # fstab
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.mt6771:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6771
+
+# Init
+PRODUCT_PACKAGES += \
+    init.mt6771.rc
     
 # Keylayouts
 PRODUCT_COPY_FILES += \
