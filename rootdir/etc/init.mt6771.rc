@@ -8,3 +8,7 @@ on init
 
 on post-fs
     mount none /system/etc/fstab.mt6771 /vendor/etc/fstab.mt6771 bind
+    
+on post-fs-data
+    # /cache has to be mounted late
+    mount_all /system/etc/fstab.mt6771 --late    
