@@ -37,7 +37,8 @@ PRODUCT_COPY_FILES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.mt6771.rc
+    init.mt6771.rc \
+    fstab.mt6771
     
 # Keylayouts
 PRODUCT_COPY_FILES += \

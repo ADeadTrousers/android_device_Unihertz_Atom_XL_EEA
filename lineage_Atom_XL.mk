@@ -18,7 +18,7 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 PRODUCT_NAME := lineage_Atom_XL
 PRODUCT_DEVICE := Atom_XL
 PRODUCT_BRAND := Unihertz
-PRODUCT_MODEL := Atom XL
+PRODUCT_MODEL := Atom_XL
 PRODUCT_MANUFACTURER := Unihertz
 
 PRODUCT_AAPT_CONFIG := xhdpi
