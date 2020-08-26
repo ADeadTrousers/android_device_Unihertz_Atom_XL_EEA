@@ -5,6 +5,15 @@ Device Tree for the Unihertz Atom XL
 Still in the process of figuring s*** out.
 For now don't use this device tree.
 
+## Building the rom
+Inside LineageOS source folder
+
+	source build/envsetup.sh
+	breakfast Atom_XL
+	ccache -M 50G
+	croot
+	brunch Atom_XL	
+
 ## How to extract recovery.img
 Inside LineageOS source folder
 
