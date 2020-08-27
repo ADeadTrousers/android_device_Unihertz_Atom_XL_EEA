@@ -27,9 +27,10 @@ unpack_bootimg will be built in
 
 Use it to extract all required infos from boot.img
 
-	unpack_bootimg --boot_img recovery.img --out recovery```
+	unpack_bootimg --boot_img boot.img --out boot
+	unpack_bootimg --boot_img recovery.img --out recovery
 
-You will get all informations required for BoardConfig.mk and a kernel, a dtb and a dtbo file.
+You will get all informations required for BoardConfig.mk and a kernel, a dtb and a dtbo file (only from recovery).
 
 ## Special Thanks To
 
