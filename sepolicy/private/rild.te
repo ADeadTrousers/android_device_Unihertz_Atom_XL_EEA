@@ -8,4 +8,3 @@ system_only(`
   # rild needs to read these props for IMS to work
   allow rild exported3_default_prop:file r_file_perms;
 ');
-

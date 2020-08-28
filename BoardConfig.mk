@@ -97,7 +97,6 @@ TARGET_USES_MKE2FS := true
 TARGET_USES_PREBUILT_VENDOR_SEPOLICY := true
 TARGET_HAS_FUSEBLK_SEPOLICY_ON_VENDOR := true
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR := $(DEVICE_PATH)/sepolicy/private
-
 # We have to skip checkpolicy because we have to re-define rild
 # in device system sepolicy to work around IMS issues.
 SELINUX_IGNORE_NEVERALLOWS := true
