@@ -46,6 +46,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     NfcNci
 
+# ImsInit hack
+PRODUCT_PACKAGES += \
+    ImsInit
+    
 # Init
 PRODUCT_PACKAGES += \
     init.mt6771.rc \
