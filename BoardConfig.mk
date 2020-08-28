@@ -99,3 +99,7 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR := $(DEVICE_PATH)/sepolicy/private
 
 # Treble
 BOARD_VNDK_VERSION := current
+
+# We need this for apns-conf
+# We would like to override instead of merge
+BUILD_BROKEN_DUP_RULES := true
