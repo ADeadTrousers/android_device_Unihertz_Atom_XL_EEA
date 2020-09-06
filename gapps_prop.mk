@@ -19,15 +19,12 @@ GAPPS_PRODUCT_PACKAGES += \
     Chrome \
     ClockGoogle \
     ContactsGoogle \
-#   DialerFramework \ # allready part of pico
     DialerGoogle \
     ExchangeGoogle \
     Gmail \
-#   GoogleTTS \ # allready part of pico
     KeyboardGoogle \
     Maps \
     Messenger \
-#   PackageInstallerGoogle \ # allready part of pico
     PixelLauncher \
     Photos \
     PrintServiceGoogle \
@@ -36,3 +33,8 @@ GAPPS_PRODUCT_PACKAGES += \
     TagGoogle \
     Wallpapers \
     WebViewGoogle
+    
+#   DialerFramework         allready part of pico
+#   GoogleTTS               allready part of pico
+#   GoogleTTS               allready part of pico
+#   PackageInstallerGoogle  allready part of pico
