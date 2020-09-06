@@ -3,6 +3,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+#Include GAPPS if applicable
+$(call inherit-product-if-exists, $(LOCAL_PATH)/gapps_prop.mk)
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
 # Enable updating of APEXes
@@ -10,10 +13,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/Unihertz/Atom_XL/Atom_XL-vendor.mk)
-
-#Include TWRP and GAPPS if applicable
-$(call inherit-product, $(LOCAL_PATH)/twrp_prop.mk)
-$(call inherit-product, $(LOCAL_PATH)/gapps_prop.mk)
 
 # Define Dynamic Partition support
 PRODUCT_TARGET_VNDK_VERSION := 29
@@ -86,4 +85,4 @@ PRODUCT_BOOT_JARS += \
     mediatek-telephony-common
 
 #Include GAPPS if applicable 
-$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
+$(call inherit-product-if-exists, vendor/opengapps/build/opengapps-packages.mk)

@@ -107,3 +107,6 @@ BOARD_VNDK_VERSION := current
 # We need this for apns-conf
 # We would like to override instead of merge
 BUILD_BROKEN_DUP_RULES := true
+
+#Include TWRP if applicable
+$(call inherit-product-if-exists, $(DEVICE_PATH)/twrp_prop.mk)
