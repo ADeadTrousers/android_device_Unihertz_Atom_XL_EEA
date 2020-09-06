@@ -30,7 +30,7 @@ Patches needed for this to work have already been merged to LineageOS as change 
 ## Setting up the build environment
 
 In general follow one of the many build instructions found at the LineageOS wiki.
-[For example the instructions for the Google Nexus 5 aka hammerhead](https://wiki.lineageos.org/devices/hammerhead/build)
+For example the instructions for the [Google Nexus 5 aka hammerhead](https://wiki.lineageos.org/devices/hammerhead/build).
 Here is a short summing up.
 
 ### Install the build packages
@@ -108,7 +108,7 @@ repo requires you to identify yourself to sync Android
 	
 ### (optional) Turn on caching to speed up build
 
-Update your PATH variable for your environment
+Update your build environment
 
 	gedit ~/.bashrc	
 
@@ -192,7 +192,7 @@ Do the actual build
 	croot
 	brunch Atom_XL	
 
-## Updateing the sorces (at a later time)
+## Updating the sorces (at a later time)
 
 Make sure everything is up-to-date
 
