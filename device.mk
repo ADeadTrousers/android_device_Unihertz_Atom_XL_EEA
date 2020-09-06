@@ -4,7 +4,7 @@
 #
 
 #Include GAPPS if applicable
-$(call inherit-product-if-exists, $(LOCAL_PATH)/gapps_prop.mk)
+-include $(LOCAL_PATH)/gapps_prop.mk
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
