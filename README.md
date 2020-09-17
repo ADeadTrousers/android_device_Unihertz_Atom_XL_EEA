@@ -183,7 +183,7 @@ At first you need to download and install imjtool
 	wget http://newandroidbook.com/tools/imjtool.tgz
 	tar -xzf imjtool.tgz -C ~/bin
 
-Then download the latest ROM from [Unihertz' Google Drive](https://drive.google.com/drive/folders/0By1nhWOmuw2KdDhTUlFOZHpXQjg?sort=13&direction=a). Because these archives are different from release to release I cannot tell you exactly where to find them exactly and how the are structured. You just need to extract the file super.img and put it into a folder where you could easily find it. For this example I put it into ~/unihertz.
+Then download the latest ROM from [Unihertz' Google Drive](https://drive.google.com/drive/folders/0By1nhWOmuw2KdDhTUlFOZHpXQjg?sort=13&direction=a). Because these archives are different from release to release I cannot tell you exactly where to find them and how the are structured. You just need to extract the file **super.img** and put it into a folder where you could easily find it. For this example I put it into **~/unihertz**.
 
 Now we need to extract the different images from the super.img
 
