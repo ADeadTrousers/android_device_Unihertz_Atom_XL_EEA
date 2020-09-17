@@ -172,6 +172,49 @@ If you want to use the default LineageOS recovery or change the settings of TWRP
 	gedit ~/android/lineage/device/Unihertz/Atom_XL/twrp_prop.mk
 	
 [Documentation of the possible settings](https://forum.xda-developers.com/showthread.php?t=1943625)
+
+## Extracting the vendor blobs
+
+### Use imjtool (formerly known as imgtool)
+
+At first you need to download and install imjtool
+
+	mkdir -p ~/bin
+	wget http://newandroidbook.com/tools/imjtool.tgz
+	tar -xzf imjtool.tgz -C ~/bin
+
+Then download the latest ROM from [Unihertz' Google Drive](https://drive.google.com/drive/folders/0By1nhWOmuw2KdDhTUlFOZHpXQjg?sort=13&direction=a). Because these archives are different from release to release I cannot tell you exactly where to find them exactly and how the are structured. You just need to extract the file super.img and put it into a folder where you could easily find it. For this example I put it into ~/unihertz.
+
+Now we need to extract the different images from the super.img
+
+	cd ~/unihertz
+	rm -rf extracted/
+	imjtool super.img extract
+	imjtool extracted/image.img extract
+	
+Next we need to mount them into the filesystem
+
+	cd ~/unihertz/extracted
+	mkdir -p system/
+	sudo mount -o loop system.img system/
+	sudo rm system/vendor
+	sudo mkdir system/vendor
+	sudo mount -o loop system.img system/vendor/
+
+Then extract all the files we need
+
+	~/android/lineage/device/Unihertz/Atom_XL/extract-files.sh ~/unihertz/extracted
+
+To cleanup unmout the images
+	
+	sudo umount ~/unihertz/extracted/system/vendor	
+	sudo umount ~/unihertz/extracted/system
+
+### Use an allready rooted device
+
+If you were able to root your device this is just a small step. Plug in your device and do the follwing
+
+	~/android/lineage/device/Unihertz/Atom_XL/extract-files.sh	
 	
 ## Building the rom
 
@@ -181,10 +224,6 @@ Prepare the build
 	source build/envsetup.sh
 	breakfast Atom_XL
 	
-To download the required vendor blobs you need an allready rooted device
-
-	cd ~/android/lineage/device/Unihertz/Atom_XL/extract-files.sh
-
 Do the actual build
 	
 	cd ~/android/lineage
