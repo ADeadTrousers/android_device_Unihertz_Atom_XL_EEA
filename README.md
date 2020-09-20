@@ -141,6 +141,7 @@ Add the following
 If you want to build with TWRP add the following to the manifest-tag
 
 	<project name="TeamWin/android_bootable_recovery" path="bootable/recovery-twrp" remote="github" revision="android-10.0" />
+	<remove-project name="LineageOS/android_bootable_recovery" />
 	
 If you want to build with GAPPS included add the following to the manifest-tag
 

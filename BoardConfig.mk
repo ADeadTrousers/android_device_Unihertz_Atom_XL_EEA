@@ -36,6 +36,10 @@ TARGET_BOARD_PLATFORM := mt6771
 TARGET_BOOTLOADER_BOARD_NAME := mt6771
 TARGET_NO_BOOTLOADER := true
 
+# These two are for MTK Chipsets only
+BOARD_USES_MTK_HARDWARE := true
+BOARD_HAS_MTK_HARDWARE := true
+
 # Kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 buildvariant=user androidboot.selinux=enforcing
 BOARD_KERNEL_BASE := 0x40078000
