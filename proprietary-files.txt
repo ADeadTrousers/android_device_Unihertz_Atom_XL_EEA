@@ -10,6 +10,7 @@ etc/apns-conf.xml:product/etc/apns-conf.xml
 -framework/mediatek-telephony-base.jar
 -framework/mediatek-telephony-common.jar
 -priv-app/ImsService/ImsService.apk
+-app/Intercom/Intercom.apk
 bin/vtservice
 etc/init/init.vtservice.rc
 etc/permissions/privapp-permissions-mediatek.xml
