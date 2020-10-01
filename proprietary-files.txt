@@ -46,3 +46,13 @@ lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
 # Atom XL radio
 -app/Intercom/Intercom.apk
+lib/libwebrtc_ns.so
+lib/libwebrtc_agc.so
+lib/libwebrtc_vad.so
+lib/libwebrtc_aecm.so
+lib64/libwebrtc_ns.so
+lib64/libwebrtc_agc.so
+lib64/libwebrtc_vad.so
+lib64/libwebrtc_aecm.so
+vendor/lib/libwebrtc_audio_preprocessing.so
+vendor/lib64/libwebrtc_audio_preprocessing.so
