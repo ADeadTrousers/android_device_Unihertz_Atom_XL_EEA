@@ -1,5 +1,7 @@
 Device configuration for Unihertz Atom XL (Atom_XL)
 =================================================
+This device tree is intended for the usage in a LineageOS or similar building environment.
+If you are looking for a special device tree for the usage in a TWRP or similar environment head over to https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_XL.
 
 The Unihertz Atom XL (codenamed simply _"Atom_XL"_) is a rugged small smartphone from Unihertz, released in July 2020. It is similar to the Atom L but with integrated amateur radio support.
 
@@ -37,142 +39,179 @@ Here is a short summing up.
 
 To successfully build LineageOS, you’ll need
 
-	sudo apt-get install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev
+```bash
+sudo apt-get install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev
+```
 
 For Ubuntu versions older than 16.04 (xenial), you’ll need
 
-	sudo apt-get install libwxgtk2.8-dev	
+```bash
+sudo apt-get install libwxgtk2.8-dev	
+```
 
 For Ubuntu versions older than 20.04 (focal), you’ll also need
 
-	sudo apt-get install libwxgtk3.0-dev
+```bash
+sudo apt-get install libwxgtk3.0-dev
+```
 
 ### Install the platform-tools
 
 Only if you haven’t previously installed adb and fastboot
 
-	wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip
-	unzip platform-tools-latest-linux.zip -d ~
+```bash
+wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip
+unzip platform-tools-latest-linux.zip -d ~
+```
 
 Update your PATH variable for your environment
 
-	gedit ~/.profile
+```bash
+gedit ~/.profile
+```
 	
 Add the following
 	
-	# add Android SDK platform tools to path
-	if [ -d "$HOME/platform-tools" ] ; then
-    	  PATH="$HOME/platform-tools:$PATH"
-	fi	
+```bash
+# add Android SDK platform tools to path
+if [ -d "$HOME/platform-tools" ] ; then
+  PATH="$HOME/platform-tools:$PATH"
+fi	
+```
 
 Then update your environment
 
-	source ~/.profile
+```bash
+source ~/.profile
+```
 	
 ### Install the repo command
 
 Download the binary and make it executable
 
-	mkdir -p ~/bin
-	curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-	chmod a+x ~/bin/repo
+```bash
+mkdir -p ~/bin
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+```
 	
 Update your PATH variable for your environment
 
-	gedit ~/.profile
+```bash
+gedit ~/.profile
+```
 	
 Add the following
 	
-	# set PATH so it includes user's private bin if it exists
-	if [ -d "$HOME/bin" ] ; then
-	  PATH="$HOME/bin:$PATH"
-	fi	
+```bash
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+  PATH="$HOME/bin:$PATH"
+fi	
+```
 
 Then update your environment
 
-	source ~/.profile
+```bash
+source ~/.profile
+```
 	
 ### (optional) Install git-lfs for GAPPS support during build
 
 If you want to include GAPPS in the build you need [git-lfs](https://git-lfs.github.com/) otherwise the apk's can't be downloaded.
 
-	curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-	sudo apt-get install git-lfs
+```bash
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo apt-get install git-lfs
+```
 	
 ### Configure git
 
 repo requires you to identify yourself to sync Android
 
-	git config --global user.email "you@example.com"
-	git config --global user.name "Your Name"
+```bash
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+```
 	
 ### (optional) Turn on caching to speed up build
 
 Update your build environment
 
-	gedit ~/.bashrc	
+```bash
+gedit ~/.bashrc	
+```
 
 Add the following
 	
-	export USE_CCACHE=1
-	export CCACHE_EXEC=/usr/bin/ccache
-	export CCACHE_COMPRESS=1
+```bash
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache
+export CCACHE_COMPRESS=1
+```
 	
 ### Initialize the LineageOS source repository
 
 Create the project folder and download the source code
 
-	mkdir -p ~/android/lineage
-	cd ~/android/lineage
-	repo init -u https://github.com/LineageOS/android.git -b lineage-17.1
-	repo sync
+```bash
+mkdir -p ~/android/lineage
+cd ~/android/lineage
+repo init -u https://github.com/LineageOS/android.git -b lineage-17.1
+```
 	
 Now let's add this very device repo to the local_manifest
 
-	gedit cd ~/android/lineage/.repo/local_manifests/roomservice.xml
+```bash
+gedit cd ~/android/lineage/.repo/local_manifests/roomservice.xml
+```
 	
 Add the following
 
-	<?xml version="1.0" encoding="UTF-8"?>
-	<manifest>
-  	  <project name="ADeadTrousers/android_device_Unihertz_Atom_XL" path="device/Unihertz/Atom_XL" remote="github" revision="master" />
-	</manifest>
-	
-If you want to build with TWRP add the following to the manifest-tag
-
-	<project name="TeamWin/android_bootable_recovery" path="bootable/recovery-twrp" remote="github" revision="android-10.0" />
-	<remove-project name="LineageOS/android_bootable_recovery" />
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="ADeadTrousers/android_device_Unihertz_Atom_XL" path="device/Unihertz/Atom_XL" remote="github" revision="master" />
+</manifest>
+```
 	
 If you want to build with GAPPS included add the following to the manifest-tag
 
-	<remote name="opengapps" fetch="https://github.com/opengapps/" />
-	<remote name="opengapps-gitlab" fetch="https://gitlab.opengapps.org/opengapps/" />
-	<project path="vendor/opengapps/build" name="aosp_build" revision="master" remote="opengapps" />
-	<project path="vendor/opengapps/sources/all" name="all" clone-depth="1" revision="master" remote="opengapps-gitlab" />
-	<!-- arm64 depends on arm -->
-	<project path="vendor/opengapps/sources/arm" name="arm" clone-depth="1" revision="master" remote="opengapps-gitlab" />
-	<project path="vendor/opengapps/sources/arm64" name="arm64" clone-depth="1" revision="master" remote="opengapps-gitlab" />
-	<project path="vendor/opengapps/sources/x86" name="x86" clone-depth="1" revision="master" remote="opengapps-gitlab" />
-	<project path="vendor/opengapps/sources/x86_64" name="x86_64" clone-depth="1" revision="master" remote="opengapps-gitlab" />
+```xml
+  <remote name="opengapps" fetch="https://github.com/opengapps/" />
+  <remote name="opengapps-gitlab" fetch="https://gitlab.opengapps.org/opengapps/" />
+  <project path="vendor/opengapps/build" name="aosp_build" revision="master" remote="opengapps" />
+  <project path="vendor/opengapps/sources/all" name="all" clone-depth="1" revision="master" remote="opengapps-gitlab" />
+  <!-- arm64 depends on arm -->
+  <project path="vendor/opengapps/sources/arm" name="arm" clone-depth="1" revision="master" remote="opengapps-gitlab" />
+  <project path="vendor/opengapps/sources/arm64" name="arm64" clone-depth="1" revision="master" remote="opengapps-gitlab" />
+  <project path="vendor/opengapps/sources/x86" name="x86" clone-depth="1" revision="master" remote="opengapps-gitlab" />
+  <project path="vendor/opengapps/sources/x86_64" name="x86_64" clone-depth="1" revision="master" remote="opengapps-gitlab" />
+```
 	
-To finish everything up sync the repo once more
+To finish everything up sync the repo
 
-	cd ~/android/lineage
-	repo sync --force-sync
-	
-## (optional) Configure TWRP and GAPPS for the device
+```bash
+cd ~/android/lineage
+repo sync --force-sync
+```
+
+If you included GAPPS you also need to sync git-lfs
+
+```bash
+cd vendor/opengapps/sources
+for d in ./*/ ; do (cd "$d" && git lfs pull); done
+```
+
+## (optional) Configure GAPPS for the device
 
 If you don't want to include GAPPS at all or want to change the apps to be installed
 
+```bash
 	gedit ~/android/lineage/device/Unihertz/Atom_XL/gapps_prop.mk
+```
 
 [Documentation of the possible settings](https://github.com/opengapps/aosp_build/blob/master/README.md)
-
-If you want to use the default LineageOS recovery or change the settings of TWRP
-
-	gedit ~/android/lineage/device/Unihertz/Atom_XL/twrp_prop.mk
-	
-[Documentation of the possible settings](https://forum.xda-developers.com/showthread.php?t=1943625)
 
 ## Extracting the vendor blobs
 
@@ -180,66 +219,91 @@ If you want to use the default LineageOS recovery or change the settings of TWRP
 
 At first you need to download and install imjtool
 
-	mkdir -p ~/bin
-	wget http://newandroidbook.com/tools/imjtool.tgz
-	tar -xzf imjtool.tgz -C ~/bin
+```bash
+mkdir -p ~/bin
+wget http://newandroidbook.com/tools/imjtool.tgz
+tar -xzf imjtool.tgz -C ~/bin
+```
 
 Then download the latest ROM from [Unihertz' Google Drive](https://drive.google.com/drive/folders/0By1nhWOmuw2KdDhTUlFOZHpXQjg?sort=13&direction=a). Because these archives are different from release to release I cannot tell you exactly where to find them and how the are structured. You just need to extract the file **super.img** and put it into a folder where you could easily find it. For this example I put it into **~/unihertz**.
 
 Now we need to extract the different images from the super.img
 
-	cd ~/unihertz
-	rm -rf extracted/
-	imjtool super.img extract
-	imjtool extracted/image.img extract
+```bash
+cd ~/unihertz
+rm -rf extracted/
+imjtool super.img extract
+imjtool extracted/image.img extract
+```
 	
 Next we need to mount them into the filesystem
 
-	cd ~/unihertz/extracted
-	mkdir -p system/
-	sudo mount -o loop system.img system/
-	sudo rm system/vendor
-	sudo mkdir system/vendor
-	sudo mount -o loop system.img system/vendor/
+```bash
+cd ~/unihertz/extracted
+mkdir -p system/
+sudo mount -o loop system.img system/
+sudo rm system/vendor
+sudo mkdir system/vendor
+sudo mount -o loop system.img system/vendor/
+```
 
 Then extract all the files we need
 
-	~/android/lineage/device/Unihertz/Atom_XL/extract-files.sh ~/unihertz/extracted
+```bash
+~/android/lineage/device/Unihertz/Atom_XL/extract-files.sh ~/unihertz/extracted
+```
 
 To cleanup unmout the images
 	
-	sudo umount ~/unihertz/extracted/system/vendor	
-	sudo umount ~/unihertz/extracted/system
+```bash
+sudo umount ~/unihertz/extracted/system/vendor	
+sudo umount ~/unihertz/extracted/system
+```
 
 ### Use an allready rooted device
 
 If you were able to root your device this is just a small step. Plug in your device and do the follwing
 
-	~/android/lineage/device/Unihertz/Atom_XL/extract-files.sh	
+```bash
+~/android/lineage/device/Unihertz/Atom_XL/extract-files.sh	
+```
 	
 ## Building the rom
 
 Prepare the build	
 
-	cd ~/android/lineage
-	source build/envsetup.sh
-	breakfast Atom_XL
+```bash
+cd ~/android/lineage
+source build/envsetup.sh
+breakfast Atom_XL
+```
 	
 Do the actual build
 	
-	cd ~/android/lineage
-	ccache -M 50G
-	croot
-	brunch Atom_XL	
+```bash
+cd ~/android/lineage
+ccache -M 50G
+croot
+brunch Atom_XL	
+```
 
 ## Updating the sorces (at a later time)
 
 Make sure everything is up-to-date
 
-	cd ~/android/lineage
-	repo sync --force-sync
-	
+```bash
+cd ~/android/lineage
+repo sync --force-sync
+```
+
 If you changed the settings of TWRP and GAPPS sadly you need to redo them now.
+
+Also don't forget to sync git-lfs if you included GAPPS
+
+```bash
+cd vendor/opengapps/sources
+for d in ./*/ ; do (cd "$d" && git lfs pull); done
+```
 
 ## How-To's
 
@@ -249,10 +313,12 @@ For those who are interested.
 
 Make sure unpack_bootimg is build
 
-	cd ~/android/lineage
-	source build/envsetup.sh
-	breakfast Atom_XL
-	make unpack_bootimg
+```bash
+cd ~/android/lineage
+source build/envsetup.sh
+breakfast Atom_XL
+make unpack_bootimg
+```
 
 unpack_bootimg will be built in
 
@@ -260,7 +326,9 @@ unpack_bootimg will be built in
 
 Use it to extract all required infos from boot.img and recovery.img of the stock rom
 
-	~/android/lineage/out/host/linux-x86/bin/unpack_bootimg --boot_img boot.img --out boot
-	~/android/lineage/out/host/linux-x86/bin/unpack_bootimg --boot_img recovery.img --out recovery
+```bash
+~/android/lineage/out/host/linux-x86/bin/unpack_bootimg --boot_img boot.img --out boot
+~/android/lineage/out/host/linux-x86/bin/unpack_bootimg --boot_img recovery.img --out recovery
+```
 
 You will get all informations required for BoardConfig.mk and a kernel, a dtb and a dtbo file (only from recovery).

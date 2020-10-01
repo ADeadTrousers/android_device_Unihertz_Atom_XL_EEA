@@ -36,5 +36,4 @@ GAPPS_PRODUCT_PACKAGES += \
     
 #   DialerFramework         allready part of pico
 #   GoogleTTS               allready part of pico
-#   GoogleTTS               allready part of pico
 #   PackageInstallerGoogle  allready part of pico
