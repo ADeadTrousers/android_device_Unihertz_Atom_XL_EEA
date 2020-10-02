@@ -54,14 +54,14 @@ To be able to install anything on the Unihertz Atom XL we first need to unlock t
 3. Go to `Settings > System > Developer Settings`, enable OEM unlocking and ADB debugging.
 4. Connect your phone to your PC and open a terminal or a command line window.
 5. Run `adb reboot bootloader` on your PC (there is no way to enter bootloader directly, only possible through adb).
-6. Once your device has finished booting run `fastboot flashing unlock` and comfirm unlock on device (*THIS WILL WIPE ALL DATA!*).
+6. Once your device has finished booting run `fastboot flashing unlock` and comfirm unlock on device (**THIS WILL WIPE ALL DATA!**).
 6. Run `fastboot reboot` to reboot your device and now you should see an unlocked warning during boot screen.
 
 ## Disabling AVB (Android Verified Boot)
 
 The get LineageOS to boot proberly we also need to disable AV. Otherwise the bootloader will check the ROM with the wrong authorization keys and prevent the loading.
 
-1. Download 'vbmeta.img' from [the latest release](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL/releases).
+1. Download `vbmeta.img` from [the latest release](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL/releases).
 2. Connect your phone to your PC and open a terminal or a command line window.
 3. Run `adb reboot bootloader` on your PC to put your device in bootloader mode.
 4. Once your device has finished booting run `fastboot flash --disable-verification --disable-verity vbmeta vbmeta.img`.
@@ -72,7 +72,7 @@ The get LineageOS to boot proberly we also need to disable AV. Otherwise the boo
 
 For now the only working recovery is the LineageOS recovery.
 
-1. Download 'recovery.img' from [the latest release](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL/releases).
+1. Download `recovery.img` from [the latest release](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL/releases).
 2. Connect your phone to your PC and open a terminal or a command line window.
 3. Run `adb reboot bootloader` on your PC to put your device in bootloader mode.
 4. Once your device has finished booting run `fastboot flash recovery recovery.img`.
@@ -84,10 +84,10 @@ The recovery will show a verification failed prompt for most packages that are n
 
 ## Installing LineageOS ROM
 
-1. Download 'lineage-17.1-XXX-UNOFFICIAL-Atom_XL.zip' from [the latest release](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL/releases).
+1. Download `lineage-17.1-XXX-UNOFFICIAL-Atom_XL.zip` from [the latest release](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL/releases).
 2. Connect your phone to your PC and open a terminal or a command line window.
 3. Run `adb reboot recovery` on your PC or simply hold volume up while turning power on to boot your device into the recovery.
-4. Wipe all data (factory reset). (*THIS DELETES EVEN INTERNAL STORAGE!*)
+4. Wipe all data (factory reset). (**THIS DELETES EVEN INTERNAL STORAGE!**)
 5. Choose "Apply Update", then "Apply Update from ADB".
 6. Run `adb sideload lineage-17.1-XXX-UNOFFICIAL-Atom_XL.zip` from your PC.
 7. Wait for the process to finish. The recovery might prompt something about verification failure, just ignore it and continue anyway.
