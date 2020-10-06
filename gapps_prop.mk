@@ -13,22 +13,22 @@ GAPPS_FORCE_PACKAGE_OVERRIDES := true
 
 GAPPS_PRODUCT_PACKAGES += \
     CalculatorGoogle \
-    CalendarGoogle \
-    CameraGoogle \
+    CalendarGooglePrebuilt \
+    GoogleCamera \
     CarrierServices \
     Chrome \
-    ClockGoogle \
-    ContactsGoogle \
-    DialerGoogle \
-    ExchangeGoogle \
-    Gmail \
-    KeyboardGoogle \
+    PrebuiltDeskClockGoogle \
+    GoogleContacts \
+    GoogleDialer \
+    PrebuiltExchange3Google \
+    PrebuiltGmail \
+    LatinImeGoogle \
     Maps \
-    Messenger \
+    PrebuiltBugle \
     PixelLauncher \
     Photos \
-    PrintServiceGoogle \
-    Search \
+    GooglePrintRecommendationService \
+    Velvet \
     StorageManagerGoogle \
     TagGoogle \
     Wallpapers \
