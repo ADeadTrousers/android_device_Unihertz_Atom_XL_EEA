@@ -1,2 +1,4 @@
+type mtk_hal_audio, domain;
+
 allow mtk_hal_audio sysfs_dt_firmware_android:file {read};
 allow mtk_hal_audio metadata_file:dir {search};
