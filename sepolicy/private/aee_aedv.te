@@ -1,0 +1,1 @@
+allow aee_aedv proc_ppm:dir {search};

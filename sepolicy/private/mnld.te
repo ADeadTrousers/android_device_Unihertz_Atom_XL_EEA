@@ -1,0 +1,3 @@
+allow mnld proc_cmdline:file {read};
+allow mnld sysfs_dt_firmware_android:dir {search};
+allow mnld metadata_file:dir {search};

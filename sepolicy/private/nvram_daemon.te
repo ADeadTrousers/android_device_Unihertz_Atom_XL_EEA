@@ -1,0 +1,3 @@
+allow nvram_daemon default_prop:file {read};
+allow nvram_daemon proc_cmdline:file {read};
+allow nvram_daemon metadata_file:dir {search};

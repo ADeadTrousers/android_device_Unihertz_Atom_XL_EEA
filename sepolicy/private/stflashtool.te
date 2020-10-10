@@ -1,0 +1,2 @@
+allow stflashtool nfc_prop:file {read};
+allow stflashtool nfc_data_file:dir {search};

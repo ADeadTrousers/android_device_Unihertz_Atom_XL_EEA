@@ -1,0 +1,2 @@
+allow system_server tkcore_systa_file:dir {getattr};
+allow system_server sysfs:file {read};

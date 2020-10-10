@@ -1,0 +1,2 @@
+allow fuelgauged_nvram sysfs_dt_firmware_android:dir {search};
+allow fuelgauged_nvram metadata_file:dir {search};
