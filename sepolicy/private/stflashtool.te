@@ -1,4 +1,5 @@
 type stflashtool, domain;
 
-allow stflashtool nfc_prop:file {read};
+allow stflashtool nfc_prop:file {read open getattr map};
 allow stflashtool nfc_data_file:dir {search};
+allow stflashtool nfc_data_file:file {read open};

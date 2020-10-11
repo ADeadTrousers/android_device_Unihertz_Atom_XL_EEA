@@ -1,0 +1,7 @@
+type para_block_device, fs_type, sysfs_type;
+
+allow vendor_init nfc_data_file:dir {setattr read};
+allow vendor_init system_data_file:dir {write add_name};
+allow vendor_init proc_cmdline:file {getattr};
+allow vendor_init gsi_metadata_file:dir {search};
+allow vendor_init para_block_device:blk_file {write};

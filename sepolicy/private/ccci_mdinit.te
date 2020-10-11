@@ -1,3 +1,5 @@
 type ccci_mdinit, domain;
 
-allow ccci_mdinit default_prop:file {read};
+allow ccci_mdinit default_prop:file {read open getattr map};
+allow ccci_mdinit sysfs_dt_firmware_android:file {read open getattr};
+allow ccci_mdinit gsi_metadata_file:dir {search};

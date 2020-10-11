@@ -1,3 +1,7 @@
+type sysfs_mmcblk, fs_type, sysfs_type;
+
 allow init vendor_configs_file:{ dir file } mounton;
 allow init vendor_overlay_file:{ dir file } mounton;
-allow init socket_device:sock_file {create};
+allow init socket_device:sock_file {create setattr unlink};
+allow init sysfs_devices_block:file {setattr};
+allow init sysfs_mmcblk:file {setattr};

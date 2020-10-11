@@ -1,5 +1,7 @@
 type mnld, domain;
 
-allow mnld proc_cmdline:file {read};
+allow mnld proc_cmdline:file {read open getattr};
 allow mnld sysfs_dt_firmware_android:dir {search};
+allow mnld sysfs_dt_firmware_android:file {read open getattr};
 allow mnld metadata_file:dir {search};
+allow mnld gsi_metadata_file:dir {search};
