@@ -1,8 +1,9 @@
-type nvram_daemon, domain;
+type nvram_daemon;
 
 allow nvram_daemon default_prop:file {read open getattr map};
 allow nvram_daemon proc_cmdline:file {read open getattr};
 allow nvram_daemon metadata_file:dir {search};
 allow nvram_daemon sysfs_dt_firmware_android:dir {search};
 allow nvram_daemon sysfs_dt_firmware_android:file {read open getattr};
-allow nvram_daemon gsi_metadata_file:dir {search};
+# Not allowed due to 'neverallow' rule, but there are 'avc:denied' during boot
+# allow nvram_daemon gsi_metadata_file:dir {search};

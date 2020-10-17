@@ -1,4 +1,5 @@
-type tkcore_systa_file, fs_type, sysfs_type;
+type tkcore_systa_file;
 
 allow system_server tkcore_systa_file:dir {getattr read open};
-allow system_server sysfs:file {read open getattr map};
+# Not allowed due to 'neverallow' rule, but there are 'avc:denied' during boot
+# allow system_server sysfs:file {read open getattr map};

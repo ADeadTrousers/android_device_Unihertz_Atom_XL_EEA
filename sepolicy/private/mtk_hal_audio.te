@@ -1,5 +1,6 @@
-type mtk_hal_audio, domain;
+type mtk_hal_audio;
 
 allow mtk_hal_audio sysfs_dt_firmware_android:file {read open getattr};
 allow mtk_hal_audio metadata_file:dir {search};
-allow mtk_hal_audio gsi_metadata_file:dir {search};
+# Not allowed due to 'neverallow' rule, but there are 'avc:denied' during boot
+# allow mtk_hal_audio gsi_metadata_file:dir {search};
