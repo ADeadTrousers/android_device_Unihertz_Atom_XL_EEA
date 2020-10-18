@@ -1,4 +1,4 @@
-type aee_aedv;
-attribute proc_ppm;
+#type aee_aedv;
+#attribute proc_ppm;
 
-allow aee_aedv proc_ppm:dir {search};
+#allow aee_aedv proc_ppm:dir {search};
