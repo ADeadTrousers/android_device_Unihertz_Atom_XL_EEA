@@ -55,7 +55,7 @@ index d4c7cad..f688fb3 100644
  LOCAL_PACKAGE_NAME := com.google.android.storagemanager
  LOCAL_PRIVILEGED_MODULE := true
  
-+LOCAL_OVERRIDES_PACKAGES := DocumentsUI StorageManager
++#LOCAL_OVERRIDES_PACKAGES := DocumentsUI StorageManager
 +
  include $(BUILD_GAPPS_PREBUILT_APK)
 -- 
