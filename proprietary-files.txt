@@ -56,3 +56,6 @@ lib64/libwebrtc_vad.so
 lib64/libwebrtc_aecm.so
 vendor/lib/libwebrtc_audio_preprocessing.so
 vendor/lib64/libwebrtc_audio_preprocessing.so
+system/bin/extmodule
+system/bin/dfu-util
+system/etc/init/extmodule.rc

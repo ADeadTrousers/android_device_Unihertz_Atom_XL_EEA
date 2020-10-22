@@ -12,7 +12,7 @@ GAPPS_VARIANT := pico
 GAPPS_FORCE_PACKAGE_OVERRIDES := true
 GAPPS_FORCE_MATCHING_DPI := true
 # Workaround for now to get Velvet (Google QuickSearch) to work
-# DONT_DEXPREOPT_PREBUILTS := true 
+DONT_UNCOMPRESS_PRIV_APPS_DEXS := true
 
 GAPPS_PRODUCT_PACKAGES += \
     CalculatorGoogle \

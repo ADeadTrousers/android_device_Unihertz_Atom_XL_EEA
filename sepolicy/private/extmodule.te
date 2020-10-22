@@ -1,0 +1,13 @@
+# add by agold xuelb for extmodule
+add_service(extmodule,extmodule_service);
+
+type extmodule, coredomain;
+type extmodule_device, dev_type;
+type extmodule_exec, file_type, exec_type, system_file_type;
+
+init_daemon_domain(extmodule);
+allow extmodule extmodule_device:dir {read write add_name open};
+allow extmodule extmodule_device:file {read write create open};
+allow extmodule extmodule_device:chr_file {read write open};
+allow extmodule extmodule_exec:file {read getattr map execute execute_no_trans entrypoint open};
+allow extmodule extmodule:tcp_socket {read write create getattr bind connect listen accept getopt setopt};
