@@ -1,6 +1,0 @@
-optional {
-  require {
-    type mediacodec;
-  }
-  allow mediacodec default_prop:file {read};
-}

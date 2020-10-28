@@ -1,8 +1,0 @@
-type para_block_device;
-
-allow vendor_init proc_cmdline:file {getattr};
-allow vendor_init para_block_device:blk_file {write};
-# Not allowed due to 'neverallow' rule, but there are 'avc:denied' during boot
-# allow vendor_init nfc_data_file:dir {setattr read};
-# allow vendor_init system_data_file:dir {write add_name};
-# allow vendor_init gsi_metadata_file:dir {search};

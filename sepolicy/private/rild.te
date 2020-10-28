@@ -9,8 +9,6 @@ system_only(`
     require {
       type rild;
     }
-    type logmuch_prop;
     get_prop(rild,exported3_default_prop);
-    allow rild logmuch_prop:file {read};
   }
 ');
