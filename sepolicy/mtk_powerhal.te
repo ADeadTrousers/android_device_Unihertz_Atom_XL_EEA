@@ -1,0 +1,2 @@
+type mtk_powerhal_data_file, file_type, data_file_type;
+type mtk_powerhal_prop, property_type;

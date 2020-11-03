@@ -1,0 +1,1 @@
+type rpc_socket, file_type;

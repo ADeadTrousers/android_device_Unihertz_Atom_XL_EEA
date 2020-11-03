@@ -1,0 +1,3 @@
+type nvcfg_device, dev_type;
+type nvcfg_block_device, dev_type;
+type nvcfg_file, file_type, data_file_type;

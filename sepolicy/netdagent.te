@@ -1,0 +1,26 @@
+type netdagent, domain, halserverdomain, mtk_hal_netdagent, mtk_hal_netdagent_server;
+type netdagent_exec, file_type, exec_type, vendor_file_type;
+type netdagent_prop, property_type, mtk_core_property_type;
+
+init_daemon_domain(netdagent);
+
+type_transition netdagent netutils_wrapper_exec:process netutils_wrapper;
+
+allow netdagent netutils_wrapper_exec:file {read getattr map execute open};
+allow netdagent netutils_wrapper:process {transition};
+dontaudit netdagent netutils_wrapper:process {noatsecure};
+allow netdagent netutils_wrapper:process {siginh rlimitinh};
+allow netdagent devpts:chr_file {read write open};
+allow netdagent system_data_file:dir {getattr};
+allow netdagent usermodehelper:file {read};
+allow netdagent property_socket:sock_file {write};
+allow netdagent init:unix_stream_socket {connectto};
+allow netdagent self:netlink_route_socket {read write create getattr bind connect setopt nlmsg_read nlmsg_write};
+allow netdagent netdagent_prop:property_service {set};
+allow netdagent netdagent_prop:file {read getattr map open};
+allow netdagent proc_net:file {read write getattr open};
+allow netdagent kernel:system {module_request};
+allow netdagent hwservicemanager:binder {call transfer};
+allow netdagent mtk_hal_netdagent_hwservice:hwservice_manager {add find};
+allow netdagent hidl_base_hwservice:hwservice_manager {add};
+allow netdagent hwservicemanager_prop:file {read getattr open};

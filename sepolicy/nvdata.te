@@ -1,0 +1,2 @@
+type nvdata_device, dev_type;
+type nvdata_file, file_type, data_file_type;

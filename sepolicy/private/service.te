@@ -1,7 +1,0 @@
-# From ImsService.apk
-type mwis_service, service_manager_type;
-type mtk_ims_service, service_manager_type;
-type wfo_service, service_manager_type;
-
-# add by agold xuelb for extmodule
-type extmodule_service, service_manager_type;

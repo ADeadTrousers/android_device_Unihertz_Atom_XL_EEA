@@ -1,0 +1,7 @@
+type teei_fp_device, dev_type;
+type teei_client_device, dev_type, mlstrustedobject;
+type teei_config_device, dev_type;
+type teei_vfs_device, dev_type;
+type teei_rpmb_device, dev_type;
+type teei_control_file, fs_type, sysfs_type;
+type teei_data_file, file_type, data_file_type;

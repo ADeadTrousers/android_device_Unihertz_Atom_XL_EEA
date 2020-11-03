@@ -1,0 +1,3 @@
+type vendor_mdl_prop, property_type, extended_core_property_type;
+type vendor_mdl_start_prop, property_type, extended_core_property_type;
+type vendor_mdl_pulllog_prop, property_type, extended_core_property_type;

@@ -1,0 +1,2 @@
+type otp_device, dev_type;
+type otp_part_block_device, dev_type;

@@ -1,0 +1,2 @@
+type mtk_operator_id_prop, property_type, mtk_core_property_type;
+type mtk_operator_prop, property_type, mtk_core_property_type;

@@ -1,0 +1,20 @@
+type ccci_rpcd, domain;
+type ccci_rpcd_exec, file_type, exec_type, vendor_file_type;
+
+init_daemon_domain(ccci_rpcd);
+
+allow ccci_rpcd sysfs_wake_lock:file {ioctl read write getattr lock append map open};
+allow ccci_rpcd self:capability2 {block_suspend};
+allow ccci_rpcd self:cap2_userns {block_suspend};
+allow ccci_rpcd system_suspend_server:binder {call transfer};
+allow ccci_rpcd system_suspend_server:fd {use};
+allow ccci_rpcd system_suspend_hwservice:hwservice_manager {find};
+allow ccci_rpcd hwservicemanager:binder {call transfer};
+allow ccci_rpcd hwservicemanager_prop:file {read getattr map open};
+allow ccci_rpcd hidl_manager_hwservice:hwservice_manager {find};
+allow ccci_rpcd ccci_device:chr_file {ioctl read write getattr lock append map open};
+allow ccci_rpcd block_device:dir {search};
+allow ccci_rpcd misc2_block_device:blk_file {ioctl read write getattr lock append map open};
+allow ccci_rpcd bootdevice_block_device:blk_file {ioctl read write getattr lock append map open};
+allow ccci_rpcd sysfs_ccci:dir {search};
+allow ccci_rpcd sysfs_ccci:file {ioctl read getattr lock map open};

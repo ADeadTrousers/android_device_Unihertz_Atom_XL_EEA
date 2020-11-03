@@ -1,0 +1,14 @@
+type flashlessd, domain;
+type flashlessd_exec, file_type, exec_type, vendor_file_type;
+
+init_daemon_domain(flashlessd);
+
+allow flashlessd ttyMT_device:chr_file {ioctl read write getattr lock append map open};
+allow flashlessd nvram_data_file:dir {ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open};
+allow flashlessd nvram_data_file:file {ioctl read write create getattr setattr lock append map unlink rename open};
+allow flashlessd nvram_data_file:lnk_file {read};
+allow flashlessd nvdata_file:lnk_file {read};
+allow flashlessd nvdata_file:dir {ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open};
+allow flashlessd nvdata_file:file {ioctl read write create getattr setattr lock append map unlink rename open};
+allow flashlessd nvram_device:chr_file {ioctl read write getattr lock append map open};
+allow flashlessd system_data_file:lnk_file {read};

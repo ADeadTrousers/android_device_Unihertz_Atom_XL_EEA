@@ -1,0 +1,2 @@
+type para_block_device, dev_type;
+type boot_para_block_device, dev_type;

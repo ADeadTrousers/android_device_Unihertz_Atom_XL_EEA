@@ -1,0 +1,26 @@
+type thermalloadalgod, domain, mlstrustedsubject;
+type thermalloadalgod_exec, file_type, exec_type, vendor_file_type;
+
+init_daemon_domain(thermalloadalgod);
+
+allow thermalloadalgod input_device:dir {ioctl read write getattr lock search open};
+allow thermalloadalgod input_device:file {ioctl read getattr lock map open};
+allow thermalloadalgod thermalloadalgod:netlink_socket {read write create bind};
+allow thermalloadalgod thermal_manager_data_file:dir {ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open};
+allow thermalloadalgod thermal_manager_data_file:file {ioctl read write create getattr setattr lock append map unlink rename open};
+allow thermalloadalgod kmsg_device:chr_file {write};
+allow thermalloadalgod proc:dir {getattr search};
+allow thermalloadalgod proc:file {ioctl read write getattr open};
+allow thermalloadalgod shell:dir {search};
+allow thermalloadalgod platform_app:dir {search};
+allow thermalloadalgod platform_app:file {read getattr open};
+allow thermalloadalgod priv_app:dir {search};
+allow thermalloadalgod priv_app:file {read getattr open};
+allow thermalloadalgod system_app:dir {search};
+allow thermalloadalgod system_app:file {read getattr open};
+allow thermalloadalgod untrusted_app:dir {search};
+allow thermalloadalgod untrusted_app:file {read getattr open};
+allow thermalloadalgod mediaserver:dir {search};
+allow thermalloadalgod mediaserver:file {read getattr open};
+allow thermalloadalgod proc_thermal:dir {search};
+allow thermalloadalgod proc_thermal:file {read write getattr open};

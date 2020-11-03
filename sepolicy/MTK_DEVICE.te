@@ -1,0 +1,22 @@
+type SUBAF_device, dev_type;
+type MTK_SMI_device, dev_type;
+type MAINAF_device, dev_type;
+type MAIN3AF_device, dev_type;
+type MAIN2AF_device, dev_type;
+type LC898212AF_device, dev_type;
+type LC898122AF_device, dev_type;
+type FM50AF_device, dev_type;
+type DW9814AF_device, dev_type;
+type DW9718AF_device, dev_type;
+type DW9714AF_device, dev_type;
+type CAM_CAL_DRV2_device, dev_type;
+type CAM_CAL_DRV1_device, dev_type;
+type CAM_CAL_DRV_device, dev_type;
+type BU64745GWZAF_device, dev_type;
+type BU6429AF_device, dev_type;
+type AK7345AF_device, dev_type;
+type AD5820AF_device, dev_type;
+type DW9714A_device, dev_type;
+type M4U_device_device, dev_type;
+type MJC_device, dev_type;
+

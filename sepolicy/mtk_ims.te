@@ -1,0 +1,2 @@
+type mtk_ims_prop, property_type, mtk_core_property_type;
+type mtk_ims_eims_pdn_prop, property_type, mtk_core_property_type;

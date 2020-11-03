@@ -1,0 +1,19 @@
+type hal_thh_default, domain, halserverdomain, halclientdomain, hal_allocator_client, hal_thh, hal_thh_server, hal_capi_client;
+type hal_thh_default_exec, file_type, exec_type, vendor_file_type;
+type hal_thh_hwservice, hwservice_manager_type;
+
+init_daemon_domain(hal_thh_default);
+
+allow hal_thh_default hwservicemanager:binder {call transfer};
+allow hal_thh_default teei_client_device:chr_file {ioctl read write create getattr setattr lock append map unlink open};
+allow hal_thh_default teei_data_file:dir {ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open};
+allow hal_thh_default teei_data_file:file {ioctl read write getattr lock append map open};
+allow hal_thh_default teei_data_file:file {ioctl read write create getattr setattr lock append map unlink rename open};
+allow hal_thh_default ut_keymaster_device:chr_file {ioctl read write open};
+allow hal_thh_default soter_teei_prop:property_service {set};
+allow hal_thh_server hal_thh_hwservice:hwservice_manager {add find};
+allow hal_thh_server hidl_base_hwservice:hwservice_manager {add};
+allow hal_thh_client hal_thh_hwservice:hwservice_manager {find};
+allow hal_thh_client hal_thh_server:binder {call transfer};
+allow hal_thh_server hal_thh_client:binder {transfer};
+allow hal_thh_client hal_thh_server:fd {use};

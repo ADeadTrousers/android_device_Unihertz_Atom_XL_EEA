@@ -1,0 +1,21 @@
+type volte_ua, domain, netdomain, mtkimsmddomain;
+type volte_ua_socket, file_type;
+type volte_ua_exec, file_type, exec_type, vendor_file_type;
+type ctl_volte_ua_prop, property_type;
+
+init_daemon_domain(volte_ua);
+
+allow volte_ua socket_device:sock_file {write};
+allow volte_ua volte_stack:unix_stream_socket {connectto};
+allow volte_ua wfca:unix_stream_socket {connectto};
+allow volte_ua node:udp_socket {node_bind};
+allow volte_ua self:udp_socket {create bind};
+allow volte_ua self:udp_socket {read};
+allow volte_ua self:capability {setgid setuid};
+allow volte_ua volte_stack_socket:sock_file {write};
+allow volte_ua volte_ua_socket:sock_file {write};
+allow volte_ua self:udp_socket {setopt};
+allow volte_ua self:capability2 {wake_alarm};
+allow volte_ua netd:unix_stream_socket {connectto};
+allow volte_ua netd_socket:sock_file {write};
+allow volte_ua wfca_socket:sock_file {write};

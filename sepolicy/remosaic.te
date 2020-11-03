@@ -1,0 +1,13 @@
+type remosaic_daemon, domain;
+type remosaic_daemon_exec, file_type, exec_type, vendor_file_type;
+type remosaic_daemon_service, vndservice_manager_type;
+
+init_daemon_domain(remosaic_daemon);
+# add_service(remosaic_daemon,remosaic_daemon_service);
+
+allow remosaic_daemon vndbinder_device:chr_file {ioctl read write getattr lock append map open};
+allow remosaic_daemon vndservicemanager:binder {call transfer};
+allow remosaic_daemon mtk_hal_camera:binder {transfer};
+allow remosaic_daemon remosaic_daemon_service:service_manager {add};
+allow remosaic_daemon mtk_hal_camera:fd {use};
+allow remosaic_daemon ion_device:chr_file {ioctl read open};

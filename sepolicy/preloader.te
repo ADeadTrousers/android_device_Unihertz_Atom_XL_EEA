@@ -1,0 +1,2 @@
+type preloader_device, dev_type;
+type preloader_block_device, dev_type;

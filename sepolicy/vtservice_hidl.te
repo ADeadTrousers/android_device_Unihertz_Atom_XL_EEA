@@ -1,0 +1,30 @@
+type vtservice_hidl_service, service_manager_type;
+type vtservice_hidl, domain, netdomain, mtkimsapdomain;
+type vtservice_hidl_exec, file_type, exec_type, vendor_file_type;
+
+init_daemon_domain(vtservice_hidl);
+
+allow vtservice_hidl mtkimsmddomain:udp_socket {read write getattr setopt};
+allow vtservice_hidl vtservice_service:service_manager {add};
+allow vtservice_hidl rild_oem_socket:sock_file {write};
+allow vtservice_hidl mtkrild:unix_stream_socket {connectto};
+allow vtservice_hidl MTK_SMI_device:chr_file {ioctl read write open};
+allow vtservice_hidl fwmarkd_socket:sock_file {write};
+allow vtservice_hidl netd:unix_stream_socket {connectto};
+allow vtservice_hidl untrusted_app:binder {call};
+allow vtservice_hidl proc:file {open};
+allow vtservice_hidl self:udp_socket {read write create getattr bind connect getopt setopt shutdown};
+allow vtservice_hidl node:udp_socket {node_bind};
+allow vtservice_hidl mtk_hal_videotelephony_hwservice:hwservice_manager {add find};
+allow vtservice_hidl hidl_base_hwservice:hwservice_manager {add};
+allow vtservice_hidl hwservicemanager:binder {call transfer};
+allow vtservice_hidl vtservice:binder {transfer};
+allow vtservice_hidl vtservice:binder {call transfer};
+allow vtservice_hidl vtservice:fd {use};
+allow vtservice_hidl hwservicemanager_prop:file {read getattr map open};
+allow vtservice_hidl debugfs_tracing:file {open};
+allow vtservice_hidl debugfs_tracing:file {write};
+allow vtservice_hidl system_file:dir {read};
+allow vtservice_hidl system_file:dir {open};
+allow vtservice_hidl rild:unix_stream_socket {connectto};
+allow vtservice_hidl proc:file {read};

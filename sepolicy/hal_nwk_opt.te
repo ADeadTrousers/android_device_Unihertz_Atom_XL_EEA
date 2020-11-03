@@ -1,0 +1,9 @@
+allow hal_nwk_opt_server mtk_hal_nwk_opt_hwservice:hwservice_manager {add find};
+allow hal_nwk_opt_server hidl_base_hwservice:hwservice_manager {add};
+allow hal_nwk_opt_client hal_nwk_opt_server:binder {call transfer};
+allow hal_nwk_opt_server hal_nwk_opt_client:binder {transfer};
+allow hal_nwk_opt_client hal_nwk_opt_server:fd {use};
+allow hal_nwk_opt_server hal_nwk_opt_client:binder {call transfer};
+allow hal_nwk_opt_client hal_nwk_opt_server:binder {transfer};
+allow hal_nwk_opt_server hal_nwk_opt_client:fd {use};
+allow hal_nwk_opt_client mtk_hal_nwk_opt_hwservice:hwservice_manager {find};

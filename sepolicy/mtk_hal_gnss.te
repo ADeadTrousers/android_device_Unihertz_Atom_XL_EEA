@@ -1,0 +1,12 @@
+type mtk_hal_gnss, domain, halserverdomain, hal_gnss, hal_gnss_server;
+type mtk_hal_gnss_exec, file_type, exec_type, vendor_file_type;
+
+init_daemon_domain(mtk_hal_gnss);
+
+allow mtk_hal_gnss vndbinder_device:chr_file {ioctl read write getattr lock append map open};
+allow mtk_hal_gnss vndservicemanager:binder {call transfer};
+allow mtk_hal_gnss mnld_data_file:sock_file {ioctl read write create getattr setattr lock append map unlink rename open};
+allow mtk_hal_gnss mnld_data_file:sock_file {ioctl read write getattr lock append map open};
+allow mtk_hal_gnss mnld_data_file:dir {ioctl read write create getattr setattr lock append map unlink rename open};
+allow mtk_hal_gnss mnld_data_file:dir {ioctl read write getattr lock add_name remove_name search open};
+allow mtk_hal_gnss mnld:unix_dgram_socket {sendto};

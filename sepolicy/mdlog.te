@@ -1,0 +1,3 @@
+type mdlog_device, dev_type;
+type mdlog_data_file, file_type, data_file_type, core_data_file_type;
+type persist_mdlog_prop, property_type, extended_core_property_type;

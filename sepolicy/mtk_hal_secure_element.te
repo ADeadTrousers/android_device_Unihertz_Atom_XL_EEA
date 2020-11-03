@@ -1,0 +1,11 @@
+type mtk_hal_secure_element, domain, halserverdomain, halclientdomain, hal_secure_element, hal_secure_element_server, hal_telephony_client;
+type mtk_hal_secure_element_exec, file_type, exec_type, vendor_file_type;
+
+init_daemon_domain(mtk_hal_secure_element);
+
+allow mtk_hal_secure_element secure_element_device:chr_file {ioctl read write getattr lock append map open};
+allow mtk_hal_secure_element mtk_hal_rild_hwservice:hwservice_manager {find};
+allow mtk_hal_secure_element rild:binder {call transfer};
+allow mtk_hal_secure_element rild:fd {use};
+allow mtk_hal_secure_element hal_telephony_hwservice:hwservice_manager {find};
+allow mtk_hal_secure_element exported3_radio_prop:file {read getattr map open};

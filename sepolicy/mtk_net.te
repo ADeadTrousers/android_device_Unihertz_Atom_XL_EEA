@@ -1,0 +1,1 @@
+type mtk_net_ipv6_prop, property_type, mtk_core_property_type;

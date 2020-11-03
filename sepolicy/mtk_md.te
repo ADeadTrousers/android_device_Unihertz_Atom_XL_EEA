@@ -1,0 +1,3 @@
+type mtk_md_prop, property_type, mtk_core_property_type;
+type mtk_md_version_prop, property_type, mtk_core_property_type;
+type mtk_md_status_prop, property_type;

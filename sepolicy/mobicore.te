@@ -1,0 +1,19 @@
+type mobicore_admin_device, dev_type;
+type mobicore_user_device, dev_type, mlstrustedobject;
+type mobicore_tui_device, dev_type;
+type mobicore, domain;
+type mobicore_exec, file_type, exec_type, vendor_file_type;
+type mobicore_data_file, file_type, data_file_type;
+
+init_daemon_domain(mobicore);
+
+allow mobicore mobicore_admin_device:chr_file {ioctl read write getattr lock append map open};
+allow mobicore mobicore_user_device:chr_file {ioctl read write getattr lock append map open};
+allow mobicore mobicore_data_file:dir {ioctl read write create getattr lock rename add_name remove_name reparent search open};
+allow mobicore mobicore_data_file:file {ioctl read write create getattr setattr lock append map unlink rename open};
+allow mobicore mobicore_tui_device:chr_file {ioctl read open};
+allow mobicore unlabeled:dir {search};
+allow mobicore mnt_vendor_file:dir {search};
+allow mobicore persist_data_file:dir {ioctl read write getattr lock add_name search open};
+allow mobicore persist_data_file:file {read write create getattr open};
+

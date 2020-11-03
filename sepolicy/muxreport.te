@@ -1,0 +1,19 @@
+type muxreport, domain;
+type muxreport_exec, file_type, exec_type, vendor_file_type;
+type ctl_muxreport-daemon_prop, property_type;
+
+init_daemon_domain(muxreport);
+
+allow muxreport property_socket:sock_file {write};
+allow muxreport init:unix_stream_socket {connectto};
+allow muxreport ril_mux_report_case_prop:property_service {set};
+allow muxreport ril_mux_report_case_prop:file {read getattr map open};
+allow muxreport ccci_device:chr_file {ioctl read write getattr lock append map open};
+allow muxreport devpts:chr_file {ioctl read write getattr lock append map open};
+allow muxreport eemcs_device:chr_file {ioctl read write getattr lock append map open};
+allow muxreport emd_device:chr_file {ioctl read write getattr lock append map open};
+allow muxreport sysfs_ccci:dir {search};
+allow muxreport sysfs_ccci:file {ioctl read getattr lock map open};
+allow muxreport tel_switch_prop:file {read getattr map open};
+allow muxreport vendor_radio_prop:property_service {set};
+allow muxreport vendor_radio_prop:file {read getattr map open};

@@ -1,0 +1,14 @@
+type mtk_hal_nwk_opt, domain, halserverdomain, hal_nwk_opt, hal_nwk_opt_server;
+type mtk_hal_nwk_opt_exec, file_type, exec_type, vendor_file_type;
+type mtk_hal_nwk_opt_hwservice, hwservice_manager_type;
+
+init_daemon_domain(mtk_hal_nwk_opt);
+
+allow mtk_hal_nwk_opt hwservicemanager:binder {call transfer};
+allow mtk_hal_nwk_opt nwkopt_device:chr_file {ioctl read write getattr lock append map open};
+allow mtk_hal_nwk_opt debugfs_fpsgo:dir {search};
+allow mtk_hal_nwk_opt debugfs_fpsgo:file {ioctl read write getattr lock append map open};
+allow mtk_hal_nwk_opt input_device:dir {ioctl read getattr lock search open};
+allow mtk_hal_nwk_opt input_device:file {ioctl read write getattr lock append map open};
+allow mtk_hal_nwk_opt input_device:chr_file {ioctl read write getattr lock append map open};
+allow mtk_hal_nwk_opt tx_device:chr_file {ioctl read write getattr lock append map open};

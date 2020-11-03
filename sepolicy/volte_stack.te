@@ -1,0 +1,32 @@
+type volte_stack, domain, netdomain, mtkimsmddomain;
+type volte_stack_socket, file_type;
+type volte_stack_exec, file_type, exec_type, vendor_file_type;
+type ctl_volte_stack_prop, property_type;
+
+init_daemon_domain(volte_stack);
+
+allow volte_stack socket_device:sock_file {write};
+allow volte_stack self:key_socket {read write create setopt};
+allow volte_stack self:capability {net_admin};
+allow volte_stack self:capability {setgid setuid};
+allow volte_stack self:tcp_socket {create bind listen setopt};
+allow volte_stack self:udp_socket {read write bind setopt};
+allow volte_stack self:udp_socket {create};
+allow volte_stack self:tcp_socket {shutdown};
+allow volte_stack self:udp_socket {shutdown};
+allow volte_stack node:tcp_socket {node_bind};
+allow volte_stack node:udp_socket {node_bind};
+allow volte_stack port:tcp_socket {name_bind};
+allow volte_stack port:udp_socket {name_bind};
+allow volte_stack self:tcp_socket {accept};
+allow volte_stack self:tcp_socket {read};
+allow volte_stack self:tcp_socket {write};
+allow volte_stack self:tcp_socket {getattr};
+allow volte_stack self:tcp_socket {connect};
+allow volte_stack port:tcp_socket {name_connect};
+allow volte_stack volte_stack_socket:sock_file {write};
+allow volte_stack init:unix_stream_socket {connectto};
+allow volte_stack property_socket:sock_file {write};
+allow volte_stack self:netlink_xfrm_socket {read write create bind nlmsg_read nlmsg_write};
+allow volte_stack netd:unix_stream_socket {connectto};
+allow volte_stack netd_socket:sock_file {write};

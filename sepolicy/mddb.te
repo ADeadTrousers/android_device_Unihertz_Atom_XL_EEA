@@ -1,0 +1,2 @@
+type mddb_filter_data_file, file_type, data_file_type, core_data_file_type;
+type mddb_data_file, file_type, data_file_type;

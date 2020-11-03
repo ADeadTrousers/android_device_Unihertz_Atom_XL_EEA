@@ -1,0 +1,3 @@
+type MT_pmic_device, dev_type;
+type MT_pmic_adc_cali_device, dev_type;
+type MT_pmic_cali_device, dev_type;

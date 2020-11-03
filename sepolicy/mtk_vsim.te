@@ -1,0 +1,2 @@
+type mtk_vsim_prop, property_type, mtk_core_property_type;
+type mtk_vsim_sys_prop, property_type, extended_core_property_type;

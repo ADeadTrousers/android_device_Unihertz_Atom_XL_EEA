@@ -1,0 +1,10 @@
+allow hal_mms_client hal_mms_server:binder {call transfer};
+allow hal_mms_server hal_mms_client:binder {transfer};
+allow hal_mms_client hal_mms_server:fd {use};
+allow hal_mms_server hal_mms_client:binder {call transfer};
+allow hal_mms_client hal_mms_server:binder {transfer};
+allow hal_mms_server hal_mms_client:fd {use};
+allow hal_mms_client mtk_hal_mms_hwservice:hwservice_manager {find};
+allow hal_mms_server mtk_hal_mms_hwservice:hwservice_manager {add find};
+allow hal_mms_server hidl_base_hwservice:hwservice_manager {add};
+

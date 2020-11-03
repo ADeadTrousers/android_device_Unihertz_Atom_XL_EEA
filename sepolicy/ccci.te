@@ -1,0 +1,10 @@
+type ccci_cfg_file, file_type, data_file_type;
+type ccci_data_md1_file, file_type, data_file_type;
+type ccci_device, dev_type;
+type ccci_monitor_device, dev_type;
+type ctl_ccci2_fsd_prop, property_type;
+type ctl_ccci2_rpcd_prop, property_type;
+type ctl_ccci3_fsd_prop, property_type;
+type ctl_ccci_fsd_prop, property_type;
+type ctl_ccci_rpcd_prop, property_type;
+

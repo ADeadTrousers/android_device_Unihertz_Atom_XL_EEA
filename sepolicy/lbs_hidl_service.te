@@ -1,0 +1,12 @@
+type lbs_hidl_service, domain, halserverdomain, mtk_hal_lbs, mtk_hal_lbs_server;
+type lbs_hidl_service_exec, file_type, exec_type, vendor_file_type;
+
+init_daemon_domain(lbs_hidl_service);
+
+allow lbs_hidl_service vndbinder_device:chr_file {ioctl read write getattr lock append map open};
+allow lbs_hidl_service vndservicemanager:binder {call transfer};
+allow lbs_hidl_service agpsd_socket:sock_file {write};
+allow lbs_hidl_service mtk_agpsd:unix_stream_socket {connectto};
+allow lbs_hidl_service mtk_agpsd:unix_dgram_socket {sendto};
+allow lbs_hidl_service mnld:unix_dgram_socket {sendto};
+allow lbs_hidl_service radio:binder {transfer};

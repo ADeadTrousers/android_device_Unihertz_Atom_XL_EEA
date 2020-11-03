@@ -1,0 +1,14 @@
+type mtk_hal_bgs_hwservice, hwservice_manager_type;
+
+allow mtk_hal_bgs_client mtk_hal_bgs_server:binder {call transfer};
+allow mtk_hal_bgs_server mtk_hal_bgs_client:binder {transfer};
+allow mtk_hal_bgs_client mtk_hal_bgs_server:fd {use};
+allow mtk_hal_bgs_server mtk_hal_bgs_client:binder {call transfer};
+allow mtk_hal_bgs_client mtk_hal_bgs_server:binder {transfer};
+allow mtk_hal_bgs_server mtk_hal_bgs_client:fd {use};
+allow mtk_hal_bgs_server mtk_hal_bgs_hwservice:hwservice_manager {add find};
+allow mtk_hal_bgs_server hidl_base_hwservice:hwservice_manager {add};
+allow mtk_hal_bgs_client mtk_hal_bgs_hwservice:hwservice_manager {find};
+allow mtk_hal_bgs platform_app:binder {transfer};
+allow mtk_hal_bgs platform_app:binder {call transfer};
+allow mtk_hal_bgs platform_app:fd {use};
