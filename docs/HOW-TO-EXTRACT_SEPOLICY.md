@@ -39,6 +39,7 @@ You should have the following files now:
 - `vendor_property_contexts`
 - `vendor_sepolicy.cil`
 - `vndservice_contexts`
+
 Now you are good to go.
 
 ### But how ... ?
