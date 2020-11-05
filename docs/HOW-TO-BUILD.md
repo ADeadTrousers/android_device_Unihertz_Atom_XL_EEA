@@ -189,49 +189,14 @@ If you don't want to include GAPPS at all or want to change the apps to be insta
 
 ## Extracting the vendor blobs
 
-### Use imjtool (formerly known as imgtool)
+### Use imjtool (formerly known as imgtool) to extract from stock rom files
 
-At first you need to download and install imjtool
-
-```bash
-mkdir -p ~/bin
-wget http://newandroidbook.com/tools/imjtool.tgz
-tar -xzf imjtool.tgz -C ~/bin
-```
-
-Then download the latest ROM from [Unihertz' Google Drive](https://drive.google.com/drive/folders/0By1nhWOmuw2KdDhTUlFOZHpXQjg?sort=13&direction=a). Because these archives are different from release to release I cannot tell you exactly where to find them and how the are structured. You just need to extract the file **super.img** and put it into a folder where you could easily find it. For this example I put it into **~/unihertz**.
-
-Now we need to extract the different images from the super.img
-
-```bash
-cd ~/unihertz
-rm -rf extracted/
-imjtool super.img extract
-imjtool extracted/image.img extract
-```
-	
-Next we need to mount them into the filesystem
-
-```bash
-cd ~/unihertz/extracted
-mkdir -p system/
-sudo mount -o loop system.img system/
-sudo rm system/vendor
-sudo mkdir system/vendor
-sudo mount -o loop system.img system/vendor/
-```
+First follow [the instructions to extract and mount the stock rom files](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL/blob/master/docs/HOW-TO-EXTRACT_FILES.md) 
 
 Then extract all the files we need
 
 ```bash
 ~/android/lineage/device/Unihertz/Atom_XL/extract-files.sh ~/unihertz/extracted
-```
-
-To cleanup unmout the images
-	
-```bash
-sudo umount ~/unihertz/extracted/system/vendor	
-sudo umount ~/unihertz/extracted/system
 ```
 
 ### Use an allready rooted device
