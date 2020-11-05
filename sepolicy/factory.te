@@ -79,8 +79,8 @@ allow factory mmcblk1_block_device:blk_file {ioctl read write getattr lock appen
 allow factory bootdevice_block_device:blk_file {ioctl read write getattr lock append map open};
 allow factory mmcblk1p1_block_device:blk_file {ioctl read write getattr lock append map open};
 allow factory block_device:dir {write lock add_name remove_name search open};
-# (allowx factory mmcblk1_block_device (ioctl blk_file (0x1260)))
-# (allowx factory bootdevice_block_device (ioctl blk_file (0x1260)))
+allowxperm factory mmcblk1_block_device:blk_file ioctl {0x1260};
+allowxperm factory bootdevice_block_device:blk_file ioctl {0x1260};
 allow factory nvdata_file:dir {ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open};
 allow factory nvdata_file:file {ioctl read write create getattr setattr lock append map unlink rename open};
 allow factory hrm_device:chr_file {ioctl read getattr lock map open};
@@ -180,11 +180,11 @@ allow factory self:capability {fsetid net_admin net_raw ipc_lock sys_module sys_
 allow factory sdcard_type:dir {ioctl read getattr lock search open};
 allow factory self:netlink_route_socket {read write create getattr bind nlmsg_read nlmsg_write};
 allow factory proc_net:file {read getattr open};
-# (allowx factory self (ioctl udp_socket (0x6900 0x6902)))
-# (allowx factory self (ioctl udp_socket (((range 0x890b 0x890d)) 0x8911 0x8914 0x8916 0x8918 0x891a ((range 0x891c 0x8920)) ((range 0x8922 0x8927)) 0x8929 ((range 0x8930 0x8932)) ((range 0x8934 0x8937)) 0x8939 ((range 0x8940 0x8941)) 0x8943 ((range 0x8946 0x894b)) ((range 0x8953 0x8955)) ((range 0x8960 0x8962)) ((range 0x8970 0x8971)) ((range 0x8980 0x8983)) ((range 0x8990 0x8995)) ((range 0x89a0 0x89a3)) 0x89b0 ((range 0x89e0 0x89ff)))))
-# (allowx factory self (ioctl udp_socket (0x8b00 0x8b02 0x8b04 0x8b06 0x8b08 0x8b0a 0x8b0c 0x8b0e 0x8b10 ((range 0x8b14 0x8b1d)) 0x8b20 0x8b22 0x8b24 0x8b26 0x8b28 ((range 0x8b2a 0x8b2c)) ((range 0x8b30 0x8b36)) ((range 0x8be0 0x8bff)))))
-# (allowx factory self (ioctl udp_socket (0x8913)))
-# (allowx factory self (ioctl udp_socket (0x8b03)))
+allowxperm factory self:udp_socket ioctl {0x6900 0x6902};
+allowxperm factory self:udp_socket ioctl {0x890b-0x890d 0x8911 0x8914 0x8916 0x8918 0x891a 0x891c-0x8920 0x8922-0x8927 0x8929 0x8930-0x8932 0x8934-0x8937 0x8939 0x8940-0x8941 0x8943 0x8946-0x894b 0x8953-0x8955 0x8960-0x8962 0x8970-0x8971 0x8980-0x8983 0x8990-0x8995 0x89a0-0x89a3 0x89b0 0x89e0-0x89ff};
+allowxperm factory self:udp_socket ioctl {0x8b00 0x8b02 0x8b04 0x8b06 0x8b08 0x8b0a 0x8b0c 0x8b0e 0x8b10 0x8b14-0x8b1d 0x8b20 0x8b22 0x8b24 0x8b26 0x8b28 0x8b2a-0x8b2c 0x8b30-0x8b36 0x8be0-0x8bff};
+allowxperm factory self:udp_socket ioctl {0x8913};
+allowxperm factory self:udp_socket ioctl {0x8b03};
 allow factory self:process {execmem};
 allow factory self:tcp_socket {ioctl read write create getattr setattr lock append map bind connect listen accept getopt setopt shutdown};
 allow factory self:udp_socket {ioctl read write create getattr setattr lock append map bind connect getopt setopt shutdown};

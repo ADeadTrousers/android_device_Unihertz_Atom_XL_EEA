@@ -16,6 +16,6 @@ allow mtk_hal_mms debugfs_ion:dir {search};
 allow mtk_hal_mms merged_hal_service:fd {use};
 allow mtk_hal_mms Vcodec_device:chr_file {ioctl read write getattr lock append map open};
 allow mtk_hal_mms proc_mtk_jpeg:file {ioctl read getattr lock map open};
-# (allowx mtk_hal_mms proc_mtk_jpeg (ioctl file (((range 0x780b 0x780f)))))
+allowxperm mtk_hal_mms proc_mtk_jpeg:file ioctl {0x780b-0x780f};
 allow mtk_hal_mms platform_app:fd {use};
 allow mtk_hal_mms system_app:fd {use};

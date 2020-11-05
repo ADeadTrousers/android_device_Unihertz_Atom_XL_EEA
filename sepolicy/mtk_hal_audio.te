@@ -1,7 +1,7 @@
 type mtk_hal_audio, domain, halserverdomain, halclientdomain, hal_allocator_client, hal_audio, hal_audio_server;
 type mtk_hal_audio_exec, file_type, exec_type, vendor_file_type;
 
-# init_daemon_domain(mtk_hal_audio);
+init_daemon_domain(mtk_hal_audio);
 
 allow mtk_hal_audio audiocmdservice_atci:binder {transfer};
 allow mtk_hal_audio smartpa1_device:chr_file {ioctl read write getattr lock append map open};
@@ -22,6 +22,11 @@ allow mtk_hal_audio proc:file {ioctl read getattr lock map open};
 allow mtk_hal_audio proc:lnk_file {ioctl read getattr lock map open};
 allow mtk_hal_audio audio_device:dir {ioctl read getattr lock search open};
 allow mtk_hal_audio audio_device:chr_file {ioctl read write getattr lock append map open};
+neverallow mtk_hal_audio fs_type:file {execute_no_trans};
+neverallow mtk_hal_audio file_type:file {execute_no_trans};
+neverallow mtk_hal_audio domain:tcp_socket {ioctl read write create getattr setattr lock relabelfrom relabelto append map bind connect listen accept getopt setopt shutdown recvfrom sendto name_bind node_bind name_connect};
+neverallow mtk_hal_audio domain:udp_socket {ioctl read write create getattr setattr lock relabelfrom relabelto append map bind connect listen accept getopt setopt shutdown recvfrom sendto name_bind node_bind};
+neverallow mtk_hal_audio domain:rawip_socket {ioctl read write create getattr setattr lock relabelfrom relabelto append map bind connect listen accept getopt setopt shutdown recvfrom sendto name_bind node_bind};
 allow mtk_hal_audio sdcard_type:dir {write create lock add_name remove_name search open};
 allow mtk_hal_audio sdcard_type:file {create};
 allow mtk_hal_audio nvram_data_file:dir {write lock add_name remove_name search open};
@@ -110,5 +115,6 @@ allow mtk_hal_audio rild:binder {transfer};
 allow mtk_hal_audio factory:binder {transfer};
 allow mtk_hal_audio self:netlink_kobject_uevent_socket {getopt};
 allow mtk_hal_audio dbmdx_ch_device:chr_file {read open};
-# allow mtk_hal_audio system_prop:property_service {set}; # To prevent neverallow for now
-# allow mtk_hal_audio system_prop:file {read getattr map open}; # To prevent neverallow for now
+# allow mtk_hal_audio system_prop:property_service {set};
+# allow mtk_hal_audio system_prop:file {read getattr map open};
+

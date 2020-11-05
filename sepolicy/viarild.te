@@ -70,6 +70,6 @@ allow viarild aee_aedv:unix_stream_socket {connectto};
 allow viarild vndbinder_device:chr_file {ioctl read write getattr lock append map open};
 allow viarild vndservicemanager:binder {call transfer};
 allow viarild node:rawip_socket {node_bind};
-# (allowx viarild self (ioctl udp_socket (0x890c 0x8914 0x8916 0x8939 ((range 0x89f0 0x89f1)))))
+allowxperm viarild self:udp_socket ioctl {0x890c 0x8914 0x8916 0x8939 0x89f0-0x89f1};
 allow viarild sysfs_ccci:dir {search};
 allow viarild sysfs_ccci:file {ioctl read getattr lock map open};

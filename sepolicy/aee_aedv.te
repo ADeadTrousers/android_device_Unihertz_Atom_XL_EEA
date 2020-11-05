@@ -109,8 +109,8 @@ allow aee_aedv self:capability {linux_immutable};
 allow aee_aedv userdata_block_device:blk_file {read write open};
 allow aee_aedv para_block_device:blk_file {ioctl read write getattr lock append map open};
 allow aee_aedv mrdump_device:blk_file {ioctl read write getattr lock append map open};
-# (allowx aee_aedv aee_dumpsys_vendor_file (ioctl file (((range 0x6601 0x6602)) 0x660b)))
-# (allowx aee_aedv aee_dumpsys_vendor_file (ioctl file (((range 0xf50d 0xf50e)))))
+allowxperm aee_aedv aee_dumpsys_vendor_file:file ioctl {0x6601-0x6602 0x660b};
+allowxperm aee_aedv aee_dumpsys_vendor_file:file ioctl {0xf50d-0xf50e};
 allow aee_aedv sysfs_lowmemorykiller:dir {search};
 allow aee_aedv sysfs_lowmemorykiller:file {ioctl read getattr lock map open};
 allow aee_aedv sysfs_scp:dir {ioctl read getattr lock search open};

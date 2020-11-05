@@ -26,7 +26,7 @@ allow mtk_hal_camera nvram_data_file:lnk_file {read write create getattr setattr
 allow mtk_hal_camera nvdata_file:lnk_file {read write create getattr setattr open};
 allow mtk_hal_camera proc:file {ioctl read write getattr lock append map open};
 allow mtk_hal_camera proc_mtk_jpeg:file {ioctl read getattr lock map open};
-# (allowx mtk_hal_camera proc_mtk_jpeg (ioctl file (((range 0x780b 0x780f)))))
+allowxperm mtk_hal_camera proc_mtk_jpeg:file ioctl {0x780b-0x780f};
 allow mtk_hal_camera sysfs:file {read write getattr open};
 allow mtk_hal_camera camera_sysram_device:chr_file {ioctl read getattr lock map open};
 allow mtk_hal_camera camera_pipemgr_device:chr_file {ioctl read getattr lock map open};
@@ -111,7 +111,7 @@ allow mtk_hal_camera system_file:dir {read open};
 allow mtk_hal_camera gpu_device:dir {search};
 allow mtk_hal_camera gpu_device:chr_file {ioctl read write getattr lock append map open};
 allow mtk_hal_camera proc_ged:file {ioctl read write getattr lock append map open};
-# (allowx mtk_hal_camera proc_ged (ioctl file (((range 0x6700 0x670e)) ((range 0x6764 0x676a)))))
+allowxperm mtk_hal_camera proc_ged:file ioctl {0x6700-0x670e 0x6764-0x676a};
 allow mtk_hal_camera system_data_file:lnk_file {read};
 allow mtk_hal_camera debugfs_tracing:file {write open};
 allow mtk_hal_camera debugfs_ion:dir {search};
@@ -148,9 +148,9 @@ allow mtk_hal_camera proc_isp_p2:file {ioctl read write create getattr setattr l
 allow mtk_hal_camera system_data_file:dir {getattr};
 allow mtk_hal_camera sysfs_dt_firmware_android:dir {search};
 allow mtk_hal_camera proc_m4u:file {ioctl read getattr lock map open};
-# (allowx mtk_hal_camera proc_m4u (ioctl file (((range 0x6704 0x6705)) 0x670b 0x671d 0x6732)))
+allowxperm mtk_hal_camera proc_m4u:file ioctl {0x6704-0x6705 0x670b 0x671d 0x6732};
 allow mtk_hal_camera mtk_hal_camera:unix_stream_socket {ioctl};
-# (allowx mtk_hal_camera mtk_hal_camera (ioctl unix_stream_socket (0x4901)))
+allowxperm mtk_hal_camera mtk_hal_camera:unix_stream_socket ioctl {0x4901};
 allow mtk_hal_camera platform_app:binder {transfer};
 allow mtk_hal_camera platform_app:binder {call transfer};
 allow mtk_hal_camera platform_app:fd {use};

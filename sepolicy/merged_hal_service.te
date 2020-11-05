@@ -26,7 +26,7 @@ allow merged_hal_service mediacodec:fd {use};
 allow merged_hal_service proc_mtktz:dir {search};
 allow merged_hal_service proc_mtktz:file {read getattr open};
 allow merged_hal_service proc_stat:file {read getattr open};
-# (allowx merged_hal_service proc_ged (ioctl file (((range 0x6700 0x670e)) ((range 0x6764 0x676a)))))
+allowxperm merged_hal_service proc_ged:file ioctl {0x6700-0x670e 0x6764-0x676a};
 allow merged_hal_service nvram_agent_binder_hwservice:hwservice_manager {find};
 allow merged_hal_service mtk_hal_audio:binder {transfer};
 allow merged_hal_service mtk_hal_dfps:binder {call};

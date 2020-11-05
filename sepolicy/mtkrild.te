@@ -54,7 +54,7 @@ allow mtkrild mal_mfi_socket:sock_file {write lock append map open};
 allow mtkrild sysfs_ccci:dir {search};
 allow mtkrild sysfs_ccci:file {ioctl read getattr lock map open};
 allow mtkrild aee_aedv:unix_stream_socket {connectto};
-# (allowx mtkrild self (ioctl udp_socket (0x890c 0x8914 0x8916 0x8939 ((range 0x89f0 0x89f1)))))
+allowxperm mtkrild self:udp_socket ioctl {0x890c 0x8914 0x8916 0x8939 0x89f0-0x89f1};
 allow mtkrild vndbinder_device:chr_file {ioctl read write getattr lock append map open};
 allow mtkrild vndservicemanager:binder {call transfer};
 allow mtkrild node:rawip_socket {node_bind};

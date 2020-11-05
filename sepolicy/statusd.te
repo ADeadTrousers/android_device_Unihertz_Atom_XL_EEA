@@ -45,7 +45,7 @@ allow statusd devpts:chr_file {read write};
 allow statusd device:lnk_file {unlink};
 allow statusd devpts:chr_file {open};
 allow statusd devpts:chr_file {ioctl};
-# (allowx statusd self (ioctl udp_socket (0x890c 0x8914 0x8916 0x8939 ((range 0x89f0 0x89f1)))))
+allowxperm statusd self:udp_socket ioctl {0x890c 0x8914 0x8916 0x8939 0x89f0-0x89f1};
 allow statusd sysfs_ccci:dir {search};
 allow statusd sysfs_ccci:file {ioctl read getattr lock map open};
 allow statusd vndbinder_device:chr_file {read write};
