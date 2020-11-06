@@ -158,3 +158,6 @@ allow aee_aedv proc_pl_lk:file {ioctl read getattr lock map open};
 allow aee_aedv proc_aed_reboot_reason:file {ioctl read getattr lock map open};
 allow aee_aedv proc_drop_caches:file {ioctl read write getattr lock append map open};
 allow aee_aedv mtk_hal_camera:binder {transfer};
+
+allow aee_aedv proc_ppm:dir {ioctl read getattr lock search open};
+allow aee_aedv proc_ppm:file {ioctl read getattr lock map open};

@@ -111,3 +111,5 @@ allow mediacodec mtk_em_video_venc_h264_prop:file {read getattr map open};
 allow mediacodec teei_client_device:chr_file {ioctl read write getattr lock append map open};
 allow mediacodec proc_chip:dir {ioctl read getattr lock search open};
 allow mediacodec proc_chip:file {ioctl read getattr lock map open};
+
+# allow mediacodec default_prop:file {read getattr map open};

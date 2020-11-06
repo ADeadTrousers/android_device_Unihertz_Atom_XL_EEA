@@ -72,3 +72,8 @@ allow mnld vendor_radio_prop:file {read getattr map open};
 allow mnld system_server:binder {transfer};
 allow mnld apd_file:dir {search};
 allow mnld gps_emi_device:chr_file {ioctl read write getattr lock append map open};
+
+allow mnld sysfs_dt_firmware_android:dir {read search open};
+allow mnld sysfs_dt_firmware_android:file {read getattr open};
+allow mnld proc_cmdline:file {read getattr open};
+allow mtk_hal_audio metadata_file:dir {search};

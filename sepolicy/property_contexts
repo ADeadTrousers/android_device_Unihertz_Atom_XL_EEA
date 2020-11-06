@@ -221,4 +221,7 @@ persist.vendor.mtk.ims.video.enable                                             
 vendor.usb.                                                                                         u:object_r:vendor_usb_prop:s0
 persist.vendor.usb.                                                                                 u:object_r:vendor_usb_prop:s0
 persist.vendor.usb.otg.switch                                                                       u:object_r:vendor_usb_otg_switch:s0
+persist.vendor.logmuch                                                                              u:object_r:logmuch_prop:s0
+vendor.service.nvram_init                                                                           u:object_r:service_nvram_init_prop:s0
+vendor.service.nvram_daemon                                                                         u:object_r:service_nvram_init_prop:s0
 

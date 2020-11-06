@@ -1,0 +1,10 @@
+type stflashtool, domain;
+type stflashtool_exec, file_type, exec_type, vendor_file_type;
+
+init_daemon_domain(stflashtool);
+
+allow stflashtool st21nfc_device:chr_file {ioctl read write open};
+# allow stflashtool nfc_prop:property_service {set};
+# allow stflashtool nfc_prop:file {read getattr map open};
+# allow stflashtool nfc_data_file:dir {ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open};
+# allow stflashtool nfc_data_file:file {ioctl read write create getattr setattr lock append map unlink rename open};

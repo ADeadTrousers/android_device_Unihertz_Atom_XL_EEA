@@ -118,3 +118,6 @@ allow mtk_hal_audio dbmdx_ch_device:chr_file {read open};
 # allow mtk_hal_audio system_prop:property_service {set};
 # allow mtk_hal_audio system_prop:file {read getattr map open};
 
+allow mtk_hal_audio sysfs_dt_firmware_android:dir {read search open};
+allow mtk_hal_audio sysfs_dt_firmware_android:file {read getattr open};
+allow mtk_hal_audio metadata_file:dir {search};

@@ -106,3 +106,5 @@ allow ccci_mdinit proc_cmdline:file {ioctl read getattr lock map open};
 allow ccci_mdinit sysfs_dt_firmware_android:dir {search};
 allow ccci_mdinit ctl_ccci_rpcd_prop:property_service {set};
 allow ccci_mdinit ctl_ccci2_rpcd_prop:property_service {set};
+
+# allow ccci_mdinit default_prop:file {read getattr map open};

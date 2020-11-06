@@ -166,3 +166,8 @@ allow rild netdagent:binder {call};
 allow rild mtk_vt_prop:property_service {set};
 allow rild mtk_vt_prop:file {read getattr map open};
 allow rild system_app:binder {call};
+
+# allow rild exported3_default_prop:property_service {set};
+# allow rild exported3_default_prop:file {read getattr map open};
+# allow rild logmuch_prop:property_service {set};
+# allow rild logmuch_prop:file {read getattr map open};
