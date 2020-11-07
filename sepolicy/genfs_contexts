@@ -151,3 +151,7 @@ genfscon sysfs      /module/fbt_cpu                                             
 genfscon sysfs      /module/ca_drv                                                                  u:object_r:sysfs_ca_drv:s0
 genfscon sysfs      /power/vcorefs/pwr_ctrl                                                         u:object_r:sysfs_vcorefs_pwrctrl:s0
 genfscon sysfs      /bus/platform/drivers/mem_bw_ctrl/concurrency_scenario                          u:object_r:sysfs_concurrency_scenario:s0
+genfscon sysfs      /devices/mtk-msdc.0/11240000.msdc1/mmc_host/mmc1                                u:object_r:sysfs_devices_block:s0
+genfscon sysfs      /devices/platform/externdevice/mmc_host/mmc0                                    u:object_r:sysfs_devices_block:s0
+genfscon sysfs      /devices/platform/externdevice/mmc_host/mmc1                                    u:object_r:sysfs_devices_block:s0
+

@@ -22,3 +22,7 @@ allow fuelgauged_nvram sysfs_batteryinfo:file {ioctl read getattr lock map open}
 allow fuelgauged_nvram sysfs_batteryinfo:lnk_file {ioctl read getattr lock map open};
 allow fuelgauged_nvram mnt_vendor_file:dir {search};
 allow fuelgauged_nvram sysfs_boot_mode:file {read open};
+
+allow fuelgauged_nvram sysfs_dt_firmware_android:dir {read search open};
+allow fuelgauged_nvram sysfs_dt_firmware_android:file {read getattr open};
+allow fuelgauged_nvram metadata_file:dir {search};
