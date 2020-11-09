@@ -1,2 +1,0 @@
-type mtd_device, dev_type;
-type proc_mtd, fs_type, proc_type;

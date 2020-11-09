@@ -1,2 +1,0 @@
-type misc2_device, dev_type;
-type misc2_block_device, dev_type;

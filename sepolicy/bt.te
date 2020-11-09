@@ -1,2 +1,0 @@
-type bt_a2dp_stream_socket, file_type;
-type bt_int_adp_socket, file_type;

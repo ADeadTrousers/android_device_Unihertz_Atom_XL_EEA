@@ -1,0 +1,2 @@
+attribute mtk_hal_dmc_client;
+attribute mtk_hal_md_dbfilter_client;

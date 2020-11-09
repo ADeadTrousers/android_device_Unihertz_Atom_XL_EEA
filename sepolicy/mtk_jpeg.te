@@ -1,3 +1,0 @@
-type mtk_jpeg_device, dev_type;
-type proc_mtk_jpeg, fs_type, proc_type;
-type mtk_jpeg_opt_prop, property_type, mtk_core_property_type;

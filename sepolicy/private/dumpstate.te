@@ -1,0 +1,5 @@
+allow dumpstate aee_aed:process {sigchld};
+allow dumpstate mobile_log_d:fd {use};
+allow dumpstate mobile_log_d:fifo_file {write};
+allow dumpstate mobile_log_d:process {sigchld};
+allow dumpstate mobile_log_d:unix_stream_socket {read write};

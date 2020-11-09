@@ -1,2 +1,0 @@
-type mtk_subsidylock_prop, property_type, mtk_core_property_type;
-type mtk_subsidylock_prop_connect, property_type, extended_core_property_type;

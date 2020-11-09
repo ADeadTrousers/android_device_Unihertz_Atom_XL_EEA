@@ -1,2 +1,0 @@
-type mtk_rcs_ua_support_prop, property_type, mtk_core_property_type;
-type mtk_rcs_support_prop, property_type, extended_core_property_type;

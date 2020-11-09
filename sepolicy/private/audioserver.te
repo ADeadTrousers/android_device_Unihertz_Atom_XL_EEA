@@ -1,0 +1,4 @@
+allow audioserver radio:dir {read search};
+allow audioserver radio:file {ioctl read getattr lock map open};
+allow audioserver radio_data_file:dir {search};
+allow audioserver radio_data_file:file {open};

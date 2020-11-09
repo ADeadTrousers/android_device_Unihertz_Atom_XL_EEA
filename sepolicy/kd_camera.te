@@ -1,4 +1,0 @@
-type kd_camera_hw_device, dev_type;
-type kd_camera_flashlight_device, dev_type;
-type kd_camera_hw_bus2_device, dev_type;
-

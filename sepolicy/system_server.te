@@ -1,3 +1,0 @@
-allow system_server tkcore_systa_file:dir {ioctl read getattr lock search open};
-# allow system_server tkcore_systa_file:file {ioctl read getattr lock map open};
-# allow system_server sysfs:file {read open};

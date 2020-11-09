@@ -1,0 +1,2 @@
+allow bluetooth debuglog_data_file:dir {ioctl read write create getattr setattr lock relabelto rename add_name remove_name reparent search rmdir open};
+allow bluetooth debuglog_data_file:file {ioctl read write create getattr setattr lock append map unlink rename open};

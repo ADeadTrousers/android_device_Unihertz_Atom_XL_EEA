@@ -1,0 +1,6 @@
+allow platform_app aal_service:service_manager {find};
+allow platform_app debuglog_data_file:dir {ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open};
+allow platform_app debuglog_data_file:file {ioctl read write create getattr setattr lock append map unlink rename open};
+allow platform_app mtk_cta_set_prop:file {read getattr map open};
+allow platform_app mtk_rsc_sys_prop:file {read getattr map open};
+allow platform_app sysfs_agold:file {read getattr open};

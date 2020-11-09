@@ -1,2 +1,0 @@
-type mtk_viwifi_support_prop, property_type, mtk_core_property_type;
-type mtk_viwifi_prop, property_type, mtk_core_property_type;

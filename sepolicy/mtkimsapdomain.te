@@ -1,9 +1,0 @@
-allow mtkimsapdomain volte_imsvt1_socket:sock_file {write};
-allow mtkimsapdomain volte_imcb:unix_stream_socket {connectto};
-allow mtkimsapdomain volte_vt_socket:dir {ioctl read write add_name remove_name open};
-allow mtkimsapdomain volte_vt_socket:dir {write};
-allow mtkimsapdomain volte_vt_socket:sock_file {read write create unlink};
-allow mtkimsapdomain volte_ua:fd {use};
-allow mtkimsapdomain volte_stack:unix_stream_socket {connectto};
-allow mtkimsapdomain volte_stack_socket:sock_file {write};
-allow mtkimsapdomain volte_imsa1_socket:sock_file {write};

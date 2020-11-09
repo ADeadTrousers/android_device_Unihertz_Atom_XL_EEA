@@ -1,3 +1,0 @@
-type proc_thermal, fs_type, proc_type;
-
-allow proc_thermal proc:filesystem {associate};

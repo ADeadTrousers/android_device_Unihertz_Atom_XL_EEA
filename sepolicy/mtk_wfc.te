@@ -1,6 +1,0 @@
-type mtk_wfc_serv_prop, property_type;
-type mtk_wfc_support_prop, property_type, mtk_core_property_type;
-type mtk_wfc_prop, property_type, mtk_core_property_type;
-type mtk_wfc_mccmnc_prop, property_type, extended_core_property_type;
-type mtk_wfc_entitlement_prop, property_type, extended_core_property_type;
-type mtk_wfc_opt_in_prop, property_type, extended_core_property_type;

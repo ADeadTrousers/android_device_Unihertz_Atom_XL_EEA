@@ -1,6 +1,0 @@
-type slpd, domain, netdomain;
-type slpd_exec, file_type, exec_type, vendor_file_type;
-
-init_daemon_domain(slpd);
-
-allow slpd mtk_agpsd:unix_dgram_socket {sendto};

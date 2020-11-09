@@ -1,2 +1,0 @@
-type expdb_device, dev_type;
-type expdb_block_device, dev_type;

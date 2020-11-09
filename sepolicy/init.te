@@ -1,7 +1,0 @@
-allow init vendor_configs_file:{ dir file } mounton;
-allow init vendor_overlay_file:{ dir file } mounton;
-
-allow init socket_device:sock_file {write create unlink};
-allow init sysfs_mmcblk:dir {ioctl read getattr setattr lock search open};
-allow init sysfs_mmcblk:file {ioctl read write getattr setattr lock append map open};
-allow init sysfs_devices_block:file {ioctl read getattr setattr lock map open};

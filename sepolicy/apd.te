@@ -1,3 +1,0 @@
-type apd_device, dev_type;
-type apd_block_device, dev_type;
-type apd_file, file_type, data_file_type;

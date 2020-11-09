@@ -1,7 +1,0 @@
-allow hal_dfps_client hal_dfps_server:binder {call transfer};
-allow hal_dfps_server hal_dfps_client:binder {transfer};
-allow hal_dfps_client hal_dfps_server:fd {use};
-allow hal_dfps_server hal_dfps_client:binder {call transfer};
-allow hal_dfps_client hal_dfps_server:binder {transfer};
-allow hal_dfps_server hal_dfps_client:fd {use};
-allow hal_dfps_client mtk_hal_dfps_hwservice:hwservice_manager {find};

@@ -1,3 +1,0 @@
-type volte_imsvt1_socket, file_type;
-type volte_imsa1_socket, file_type;
-type volte_vt_socket, file_type;

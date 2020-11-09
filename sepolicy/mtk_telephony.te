@@ -1,2 +1,0 @@
-type mtk_telephony_sensitive_prop, property_type;
-type mtk_telephony_addon_prop, property_type, mtk_core_property_type;

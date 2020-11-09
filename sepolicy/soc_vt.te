@@ -1,3 +1,0 @@
-type soc_vt_tcv_socket, file_type;
-type soc_vt_stk_socket, file_type;
-type soc_vt_svc_socket, file_type;

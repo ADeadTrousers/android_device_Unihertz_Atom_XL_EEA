@@ -1,3 +1,0 @@
-type mrdump_device, dev_type;
-type proc_mrdump_rst, fs_type, proc_type;
-type sysfs_mrdump_lbaooo, fs_type, sysfs_type;

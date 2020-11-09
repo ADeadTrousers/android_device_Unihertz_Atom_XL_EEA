@@ -1,1 +1,0 @@
-allow platform_app vendor_default_prop:file {read getattr map open};

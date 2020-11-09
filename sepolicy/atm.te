@@ -1,2 +1,0 @@
-type atm_mdmode_prop, property_type;
-type atm_ipaddr_prop, property_type;

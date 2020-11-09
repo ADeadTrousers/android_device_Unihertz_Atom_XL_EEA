@@ -1,4 +1,0 @@
-type MtkCodecService, domain;
-type MtkCodecService_exec, file_type, exec_type, vendor_file_type;
-
-allow MtkCodecService mediaserver:binder {transfer};

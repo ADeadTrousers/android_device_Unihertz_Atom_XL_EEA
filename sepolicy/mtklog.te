@@ -1,2 +1,0 @@
-type debug_mtklog_prop, property_type, extended_core_property_type;
-type persist_mtklog_prop, property_type, extended_core_property_type;

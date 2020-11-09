@@ -1,7 +1,0 @@
-type loghidlvendorservice, domain, mlstrustedsubject, halserverdomain, mtk_hal_log, mtk_hal_log_server;
-type loghidlvendorservice_exec, file_type, exec_type, vendor_file_type;
-
-init_daemon_domain(loghidlvendorservice);
-
-allow loghidlvendorservice system_app:binder {call};
-allow loghidlvendorservice system_app:binder {transfer};

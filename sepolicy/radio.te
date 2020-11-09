@@ -1,2 +1,0 @@
-allow radio system_app_data_file:dir r_dir_perms;
-allow radio system_app_data_file:file r_file_perms;
