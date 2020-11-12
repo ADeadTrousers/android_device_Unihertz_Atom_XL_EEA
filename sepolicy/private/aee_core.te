@@ -2,8 +2,7 @@ type aee_core_forwarder, domain, coredomain;
 type aee_core_forwarder_exec, file_type, exec_type, system_file_type;
 
 init_daemon_domain(aee_core_forwarder);
-
-type_transition kernel aee_core_forwarder_exec:process aee_core_forwarder;
+domain_auto_trans(kernel,aee_core_forwarder_exec,aee_core_forwarder);
 
 allow aee_core_forwarder sdcard_type:dir {ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open};
 allow aee_core_forwarder sdcard_type:file {ioctl read write create getattr setattr lock append map unlink rename open};

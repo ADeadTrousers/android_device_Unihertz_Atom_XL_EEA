@@ -16,3 +16,8 @@ AAL                                                                             
 media.VTS                                                                                           u:object_r:vtservice_service:s0
 media.VTS.HiDL                                                                                      u:object_r:vtservice_hidl_service:s0
 NvRAMAgent                                                                                          u:object_r:nvram_agent_service:s0
+mediatek.campostalgo                                                                                u:object_r:camerapostalgo_service:s0
+terservice                                                                                          u:object_r:terservice_service:s0
+mtkconnmetrics                                                                                      u:object_r:mtk_connmetrics_service:s0
+autoboot                                                                                            u:object_r:mtk_autoboot_service:s0
+permrecords                                                                                         u:object_r:mtk_permrecords_service:s0

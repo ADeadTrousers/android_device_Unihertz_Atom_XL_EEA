@@ -1,2 +1,0 @@
-allow kernel aee_core_forwarder:process {siginh rlimitinh};
-allow kernel aee_core_forwarder_exec:file {read getattr map execute open};

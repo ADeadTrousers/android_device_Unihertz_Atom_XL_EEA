@@ -1,6 +1,5 @@
 type mdlogger, domain, binderservicedomain, coredomain;
 type mdlogger_exec, file_type, exec_type, system_file_type;
-type ctl_mdlogger_prop, property_type;
 
 init_daemon_domain(mdlogger);
 binder_use(mdlogger);

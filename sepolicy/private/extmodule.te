@@ -7,8 +7,6 @@ init_daemon_domain(extmodule);
 add_service(extmodule,extmodule_service);
 binder_use(extmodule);
 
-allow extmodule extmodule_service:service_manager {add find};
-allow extmodule extmodule_service:service_manager {add};
 allow extmodule system_file:file {execute_no_trans};
 allow extmodule system_data_file:dir {write create add_name};
 allow extmodule system_data_file:file {read open};

@@ -34,3 +34,12 @@
 /system/bin/sn                                                                                      u:object_r:sn_exec:s0
 /system/bin/usp_service                                                                             u:object_r:usp_service_exec:s0
 /dev/ttyACM0                                                                                        u:object_r:ttyACM_device:s0
+/system/bin/camerapostalgo                                                                          u:object_r:camerapostalgo_exec:s0
+/system/bin/terservice                                                                              u:object_r:terservice_exec:s0
+/system/bin/thermald                                                                                u:object_r:thermald_exec:s0
+/system/bin/GoogleOtaBinder                                                                         u:object_r:GoogleOtaBinder_exec:s0
+/system/bin/lbs_dbg                                                                                 u:object_r:lbs_dbg_exec:s0
+/system/bin/aee_dumpstate                                                                           u:object_r:dumpstate_exec:s0
+/system/bin/mtkbootanimation                                                                        u:object_r:mtkbootanimation_exec:s0
+/system/bin/met_log_d                                                                               u:object_r:met_log_d_exec:s0
+

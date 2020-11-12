@@ -49,3 +49,5 @@ genfscon sysfs      /class/misc/pixart_ppg/enable                               
 genfscon sysfs      /board_version/modem_version                                                    u:object_r:sysfs_agold:s0
 genfscon sysfs      /hall_status/hall_status                                                        u:object_r:sysfs_agold:s0
 genfscon sysfs      /charger_sys/charger_sys                                                        u:object_r:sysfs_agold:s0
+genfscon sysfs      /block/mmcblk0rpmb/size                                                         u:object_r:access_sys_file:s0
+genfscon proc       /driver/cl_cam_status                                                           u:object_r:proc_cl_cam_status:s0

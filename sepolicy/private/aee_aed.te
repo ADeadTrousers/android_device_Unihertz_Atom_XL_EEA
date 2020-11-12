@@ -1,4 +1,3 @@
-type aee_aed, domain, mlstrustedsubject, coredomain;
 type aee_aed_exec, file_type, exec_type, system_file_type;
 
 init_daemon_domain(aee_aed);
