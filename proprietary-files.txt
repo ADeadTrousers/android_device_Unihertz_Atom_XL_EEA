@@ -131,3 +131,9 @@ bin/camerapostalgo
 etc/init/camerapostalgo.rc
 
 bin/met_log_d
+
+#-product/app/AguiToolbox/AguiToolbox.apk
+#-product/priv-app/ASOS/ASOS.apk
+#product/priv-app/ASOS/lib/arm64/libAMapSDK_MAP_v6_9_0.so
+#-priv-app/AguiNfcEmulate/AguiNfcEmulate.apk
+#-app/com.tiqiaa.remote-423/com.tiqiaa.remote-423.apk

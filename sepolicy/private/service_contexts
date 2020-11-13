@@ -21,3 +21,6 @@ terservice                                                                      
 mtkconnmetrics                                                                                      u:object_r:mtk_connmetrics_service:s0
 autoboot                                                                                            u:object_r:mtk_autoboot_service:s0
 permrecords                                                                                         u:object_r:mtk_permrecords_service:s0
+felica                                                                                              u:object_r:nfc_service:s0
+nfc.st_ext                                                                                          u:object_r:nfc_service:s0
+nfc_settings                                                                                        u:object_r:nfc_service:s0

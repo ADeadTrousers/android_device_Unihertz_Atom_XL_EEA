@@ -1,3 +1,10 @@
 attribute mtk_hal_dmc_client;
 attribute mtk_hal_md_dbfilter_client;
 attribute hal_gpu_client;
+
+attribute mtkimsapdomain;
+attribute mtk_core_property_type;
+attribute mtk_hal_apm_client;
+attribute hal_pq_client;
+attribute hal_mtkcodecservice_client;
+attribute hal_capi_client;

@@ -5,7 +5,6 @@ allow system_app mtk_atci_sys_prop:file {read getattr map open};
 allow system_app init_svc_md_monitor_prop:file {read getattr map open};
 allow system_app mtk_cta_set_prop:file {read getattr map open};
 allow system_app mtk_rsc_sys_prop:file {read getattr map open};
-allow system_app sysfs_agold:file {read getattr open};
 allow system_app agui_network_manager_prop:file {read getattr map open};
 allow system_app agui_network_manager_prop:property_service {set};
 allow system_app config_prop:file {read getattr map open};

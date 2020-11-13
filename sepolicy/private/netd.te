@@ -8,5 +8,3 @@ allow netd mdi_redirector:fd {use};
 allow netd mdi_redirector:tcp_socket {read write getattr setattr lock append map bind connect getopt setopt shutdown};
 allow netd mdmi_redirector:fd {use};
 allow netd mdmi_redirector:tcp_socket {read write getattr setattr lock append map bind connect getopt setopt shutdown};
-allow netd extmodule:fd {use};
-allow netd extmodule:tcp_socket {read write getopt setopt};
