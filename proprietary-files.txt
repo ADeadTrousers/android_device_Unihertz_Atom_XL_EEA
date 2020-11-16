@@ -66,6 +66,8 @@ bin/aee_dumpstate
 etc/init/aee_aed.rc
 etc/init/aee_aed64.rc
 etc/init/hw/init.aee.rc
+etc/aee-config
+
 lib/libaed.so
 lib/libdirect-coredump.so
 lib/vendor.mediatek.hardware.log@1.0.so
@@ -83,6 +85,8 @@ etc/init/emdlogger1.rc
 etc/init/emdlogger2.rc
 etc/init/emdlogger3.rc
 etc/init/emdlogger5.rc
+etc/emdlogger_usb_config.prop
+etc/mtklog-config.prop
 lib/libmdloggerrecycle.so
 lib64/libccci_util_sys.so
 lib64/libmdloggerrecycle.so
@@ -131,9 +135,37 @@ bin/camerapostalgo
 etc/init/camerapostalgo.rc
 
 bin/met_log_d
+usr/idc/mtk-pad.idc
+lib64/libusb
+
+etc/ams_aal_config.xml
+etc/a2dp_audio_policy_configuration.xml
+etc/audio_effects.conf
+etc/audio_policy_configuration.xml
+etc/audio_policy_configuration_bluetooth_legacy_hal.xml
+etc/audio_policy_configuration_stub.xml
+etc/audio_policy_volumes.xml
+etc/bluetooth_audio_policy_configuration.xml
+etc/usb_audio_policy_configuration.xml
+etc/hearing_aid_audio_policy_configuration.xml
+etc/r_submix_audio_policy_configuration.xml
+etc/custom.conf
+etc/default_volume_tables.xml
+etc/ixitdata.xml
+etc/nfcee_access.xml
+etc/resolution_tuner_app_list.xml
+etc/sysconfig/a-framework-sysconfig.xml
+ro.prop
+rw.prop
+
+etc/bluetooth/mtk_bt_fw.conf
+etc/bluetooth/mtk_bt_stack.conf
 
 #-product/app/AguiToolbox/AguiToolbox.apk
 #-product/priv-app/ASOS/ASOS.apk
 #product/priv-app/ASOS/lib/arm64/libAMapSDK_MAP_v6_9_0.so
+#product/etc/permissions/com.agui.newsos.xml
 #-priv-app/AguiNfcEmulate/AguiNfcEmulate.apk
+#etc/permissions/com.android.nfc_extras.xml
+#etc/permissions/com.st.android.nfc_extensions.xml
 #-app/com.tiqiaa.remote-423/com.tiqiaa.remote-423.apk

@@ -61,3 +61,5 @@
 /dev/socket/volte_imsa2(/.*)?                                                                       u:object_r:volte_imsa2_socket:s0
 /dev/socket/volte_ut(/.*)?                                                                          u:object_r:volte_ut_socket:s0
 /dev/socket/vendor.bip(/.*)?                                                                        u:object_r:vendor_bip_socket:s0
+/vendor/app/t6(/.*)?                                                                                u:object_r:tkcore_systa_file:s0
+/vendor/bin/teed                                                                                    u:object_r:tkcore_exec:s0
