@@ -58,6 +58,51 @@ PRODUCT_PACKAGES += \
     init.mt6771.rc \
     fstab.mt6771
 
+PRODUCT_PACKAGES := \
+    com.android.nfc_extras \
+    android.hardware.audio.common-util \
+    android.hardware.audio.common@2.0-util \
+    android.hardware.audio.common@4.0 \
+    android.hardware.audio.common@4.0-util \
+    android.hardware.audio.common@5.0-util \
+    android.hardware.audio.effect@2.0 \
+    android.hardware.audio.effect@4.0 \
+    android.hardware.audio.effect@5.0 \
+    android.hardware.audio@2.0 \
+    android.hardware.audio@4.0 \
+    android.hardware.audio@5.0 \
+    android.hardware.biometrics.fingerprint@2.1 \
+    android.hardware.camera.common@1.0 \
+    android.hardware.camera.device@1.0 \
+    android.hardware.camera.device@3.2 \
+    android.hardware.camera.device@3.3 \
+    android.hardware.camera.device@3.4 \
+    android.hardware.camera.device@3.5 \
+    android.hardware.camera.provider@2.4 \
+    android.hardware.camera.provider@2.5 \
+    android.hardware.health@1.0 \
+    android.hardware.health@2.0 \
+    android.hardware.nfc@1.0 \
+    android.hardware.nfc@1.1 \
+    android.hardware.nfc@1.2 \
+    android.hardware.usb.gadget@1.0 \
+    android.hardware.oemlock@1.0 \
+    android.hardware.weaver@1.0 \
+    android.hardware.authsecret@1.0 \
+    android.hardware.thermal@1.1 \
+    android.hardware.thermal@2.0 \
+    android.hardware.radio.deprecated@1.0 \
+    android.hardware.radio@1.1 \
+    android.hardware.radio@1.2 \
+    android.hardware.radio@1.3 \
+    android.hardware.radio@1.4 \
+    android.frameworks.cameraservice.common@2.0 \
+    android.frameworks.cameraservice.device@2.0 \
+    android.frameworks.cameraservice.service@2.0 \
+    vendor.lineage.touch@1.0 \
+    vendor.lineage.trust@1.0 \
+    vendor.lineage.livedisplay@2.0
+
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/mtk-kpd.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/mtk-kpd.idc \
