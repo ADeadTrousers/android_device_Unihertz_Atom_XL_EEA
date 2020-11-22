@@ -162,6 +162,12 @@ If you want to build with GAPPS included add the following to the manifest-tag
   <project path="vendor/opengapps/sources/x86" name="x86" clone-depth="1" revision="master" remote="opengapps-gitlab" />
   <project path="vendor/opengapps/sources/x86_64" name="x86_64" clone-depth="1" revision="master" remote="opengapps-gitlab" />
 ```
+
+If you want to build with Magisk included add the following to the manifest-tag
+
+```xml
+  <project name="ADeadTrousers/android_vendor_magisk" path="vendor/magisk" remote="github" revision="master" />
+```
 	
 To finish everything up sync the repo
 
