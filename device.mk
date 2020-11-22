@@ -58,8 +58,45 @@ PRODUCT_PACKAGES += \
     init.mt6771.rc \
     fstab.mt6771
 
+USE_XML_AUDIO_POLICY_CONF := 1
+USE_CONFIGURABLE_AUDIO_POLICY := 1
+
+#PRODUCT_COPY_FILES += \
+#    frameworks/av/services/audiopolicy/config/audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_policy_configuration.xml \
+#    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/a2dp_audio_policy_configuration.xml \
+#    frameworks/av/services/audiopolicy/config/audio_policy_configuration_bluetooth_legacy_hal.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_policy_configuration_bluetooth_legacy_hal.xml \
+#    frameworks/av/services/audiopolicy/config/audio_policy_configuration_stub.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_policy_configuration_stub.xml \
+#    frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_policy_volumes.xml \
+#    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/bluetooth_audio_policy_configuration.xml \
+#    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/usb_audio_policy_configuration.xml \
+#    frameworks/av/services/audiopolicy/config/hearing_aid_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/hearing_aid_audio_policy_configuration.xml \
+#    frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/r_submix_audio_policy_configuration.xml \
+#    frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/default_volume_tables.xml
+
 PRODUCT_PACKAGES := \
+    libGLES_android \
+    libaudioprocessing \
+    libaudioflinger \
+    libcameraservice \
+    libsuspend \
+    libstatssocket \
+    libsparse \
+    libdrm \
+    libusb \
+    libpcap \
+    libprotobuf-cpp-full \
+    libbrotli \
+    libext2_blkid \
+    libext2_com_err \
+    libext2_e2p \
+    libext2_profile \
+    libext2_uuid \
+    libext2fs \
+    libmetricslogger \
+    libclang_rt.hwasan-aarch64-android \
+    libclang_rt.ubsan_standalone-aarch64-android \
     com.android.nfc_extras \
+    android.frameworks.sensorservice@1.0 \
     android.hardware.audio.common-util \
     android.hardware.audio.common@2.0-util \
     android.hardware.audio.common@4.0 \
@@ -68,18 +105,12 @@ PRODUCT_PACKAGES := \
     android.hardware.audio.effect@2.0 \
     android.hardware.audio.effect@4.0 \
     android.hardware.audio.effect@5.0 \
+    android.hardware.secure_element@1.0 \
+    android.hardware.secure_element@1.1 \
     android.hardware.audio@2.0 \
     android.hardware.audio@4.0 \
     android.hardware.audio@5.0 \
     android.hardware.biometrics.fingerprint@2.1 \
-    android.hardware.camera.common@1.0 \
-    android.hardware.camera.device@1.0 \
-    android.hardware.camera.device@3.2 \
-    android.hardware.camera.device@3.3 \
-    android.hardware.camera.device@3.4 \
-    android.hardware.camera.device@3.5 \
-    android.hardware.camera.provider@2.4 \
-    android.hardware.camera.provider@2.5 \
     android.hardware.health@1.0 \
     android.hardware.health@2.0 \
     android.hardware.nfc@1.0 \
@@ -89,6 +120,7 @@ PRODUCT_PACKAGES := \
     android.hardware.oemlock@1.0 \
     android.hardware.weaver@1.0 \
     android.hardware.authsecret@1.0 \
+    android.hardware.thermal@1.0 \
     android.hardware.thermal@1.1 \
     android.hardware.thermal@2.0 \
     android.hardware.radio.deprecated@1.0 \
@@ -96,9 +128,8 @@ PRODUCT_PACKAGES := \
     android.hardware.radio@1.2 \
     android.hardware.radio@1.3 \
     android.hardware.radio@1.4 \
-    android.frameworks.cameraservice.common@2.0 \
-    android.frameworks.cameraservice.device@2.0 \
-    android.frameworks.cameraservice.service@2.0 \
+    android.hardware.vibrator@1.0 \
+    android.hardware.vibrator@1.3 \
     vendor.lineage.touch@1.0 \
     vendor.lineage.trust@1.0 \
     vendor.lineage.livedisplay@2.0
