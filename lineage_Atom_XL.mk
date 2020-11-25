@@ -38,7 +38,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 PRODUCT_GMS_CLIENTID_BASE := android-unihertz
 
 # Add "hwaddress" as a global sanitizer if it's missing.
-ifeq ($(filter hwaddress,$(SANITIZE_TARGET)),)
-  SANITIZE_TARGET := $(strip $(SANITIZE_TARGET) hwaddress)
-endif
+#ifeq ($(filter hwaddress,$(SANITIZE_TARGET)),)
+#  SANITIZE_TARGET := $(strip $(SANITIZE_TARGET) hwaddress)
+#endif
 

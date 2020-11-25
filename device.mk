@@ -93,8 +93,6 @@ PRODUCT_PACKAGES := \
     libext2_uuid \
     libext2fs \
     libmetricslogger \
-    libclang_rt.hwasan-aarch64-android \
-    libclang_rt.ubsan_standalone-aarch64-android \
     com.android.nfc_extras \
     android.frameworks.sensorservice@1.0 \
     android.hardware.audio.common-util \
@@ -133,6 +131,9 @@ PRODUCT_PACKAGES := \
     vendor.lineage.touch@1.0 \
     vendor.lineage.trust@1.0 \
     vendor.lineage.livedisplay@2.0
+
+#    libclang_rt.hwasan-aarch64-android \
+#    libclang_rt.ubsan_standalone-aarch64-android \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
