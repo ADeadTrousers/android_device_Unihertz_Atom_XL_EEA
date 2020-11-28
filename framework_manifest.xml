@@ -6,8 +6,10 @@
         <interface>
             <name>IDevicesFactory</name>
             <instance>default</instance>
+            <instance>msd</instance>
         </interface>
         <fqname>@5.0::IDevicesFactory/default</fqname>
+        <fqname>@5.0::IDevicesFactory/msd</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.mapper</name>
