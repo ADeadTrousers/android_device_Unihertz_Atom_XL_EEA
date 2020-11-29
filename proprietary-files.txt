@@ -107,7 +107,6 @@ lib64/libsysenv_system.so
 bin/loghidlsysservice
 bin/AudioSetParam
 bin/auto_update
-bin/badblocks
 bin/lbs_dbg
 bin/lcdc_screen_cap
 bin/memtester
@@ -116,7 +115,8 @@ bin/move_widevine_data.sh
 bin/notify_traceur.override.sh
 bin/oem-iptables-init.sh
 bin/rtt
-bin/vintf
+#bin/badblocks
+#bin/vintf
 
 etc/init/hw/vendor_init_as_system.rc
 etc/init/init.connectivity.rc
