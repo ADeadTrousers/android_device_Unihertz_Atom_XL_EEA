@@ -63,6 +63,7 @@ lib64/libwebrtc_agc.so
 lib64/libwebrtc_vad.so
 lib64/libwebrtc_aecm.so
 bin/extmodule
+bin/extcmdtest
 bin/dfu-util
 etc/init/extmodule.rc
 
@@ -71,6 +72,7 @@ bin/aee_aed
 bin/aee_aed64
 bin/aee_core_forwarder
 bin/aee_dumpstate
+bin/aee_archive
 etc/init/aee_aed.rc
 etc/init/aee_aed64.rc
 etc/init/hw/init.aee.rc
@@ -88,6 +90,7 @@ bin/emdlogger1
 bin/emdlogger2
 bin/emdlogger3
 bin/emdlogger5
+bin/sspm_log_writer
 etc/init/mdlogger.rc
 etc/init/emdlogger1.rc
 etc/init/emdlogger2.rc
@@ -102,6 +105,18 @@ lib64/libmdloggerrecycle.so
 lib64/libsysenv_system.so
 
 bin/loghidlsysservice
+bin/AudioSetParam
+bin/auto_update
+bin/badblocks
+bin/lbs_dbg
+bin/lcdc_screen_cap
+bin/memtester
+bin/met-cmd
+bin/move_widevine_data.sh
+bin/notify_traceur.override.sh
+bin/oem-iptables-init.sh
+bin/rtt
+bin/vintf
 
 etc/init/hw/vendor_init_as_system.rc
 etc/init/init.connectivity.rc
@@ -408,6 +423,8 @@ framework/com.st.android.nfc_extensions.jar
 etc/init/hw/init.stnfc.rc
 etc/nfcee_access.xml
 etc/permissions/com.st.android.nfc_extensions.xml
+bin/nfcstackp
+bin/st_factorytests
 lib/libnfc_st_dta.so
 lib/libnfc_st_dta_jni.so
 lib/libstnfc-nci.so

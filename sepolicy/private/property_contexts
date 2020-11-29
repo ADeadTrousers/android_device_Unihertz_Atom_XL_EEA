@@ -1,3 +1,4 @@
+ctl.android.hardware.dumpstate                                                                      u:object_r:ctl_dumpstate_prop:s0
 init.svc.aee_aedv                                                                                   u:object_r:init_svc_aee_aedv_prop:s0
 ctl.atci_service                                                                                    u:object_r:ctl_atci_service_prop:s0
 persist.vendor.radio.port_index                                                                     u:object_r:mtk_atci_sys_prop:s0
@@ -29,7 +30,6 @@ ro.product.current_rsc_path                                                     
 init.svc.md_monitor                                                                                 u:object_r:init_svc_md_monitor_prop:s0
 persist.vendor.ter                                                                                  u:object_r:terservice_prop:s0
 vendor.ter.service                                                                                  u:object_r:terservice_prop:s0
-ctl.android.hardware.dumpstate                                                                      u:object_r:ctl_dumpstate_prop:s0
 ctl.restart$camerapostalgo                                                                          u:object_r:ctl_campostalgo_prop:s0
 ctl.start$camerapostalgo                                                                            u:object_r:ctl_campostalgo_prop:s0
 ctl.stop$camerapostalgo                                                                             u:object_r:ctl_campostalgo_prop:s0
@@ -40,4 +40,3 @@ persist.adb.nonblocking_ffs                                                     
 init.svc.pkm_service                                                                                u:object_r:mtk_pkm_init_prop:s0
 ro.audio.usb.period_us                                                                              u:object_r:exported_default_prop:s0 exact int
 persist.sys.sw.dbg.en                                                                               u:object_r:ctl_default_prop:s0
-ro.sensorhub_support                                                                                u:object_r:sensorhub_support_prop:s0

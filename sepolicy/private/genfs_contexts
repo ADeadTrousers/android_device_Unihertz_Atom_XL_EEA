@@ -16,5 +16,3 @@ genfscon sysfs      /devices/virtual/misc/mcupm                                 
 genfscon sysfs      /devices/platform/mt_usb/cmode                                                  u:object_r:sysfs_mt_usb:s0
 genfscon sysfs      /block/mmcblk0rpmb/size                                                         u:object_r:access_sys_file:s0
 genfscon proc       /driver/cl_cam_status                                                           u:object_r:proc_cl_cam_status:s0
-
-genfscon proc       /ppm                                                                            u:object_r:proc_ppm:s0

@@ -1,11 +1,12 @@
-import sys
 import re
 import os
+import glob
 
 # BEGIN CLASS SEPolicy
 class SEPolicy:
-  def __init__(self,typename):
+  def __init__(self,typename,strip):
     self.__typename = typename
+    self.__strip = strip
     self.__search = f"(?<=[(: ])(?:[^(: ]+[-_])?{typename}(?:[-_][^): ]+)?(?=[): ])"     # Searching for the exact typename or with the underscore as the delimiter
     self.__attributes = []
     self.__properties = []
@@ -19,13 +20,17 @@ class SEPolicy:
     self.__foreigns = []
     self.__remainings = []
     self.__daemon = ""
+    self.__binder = ""
+    self.__hwbinder = ""
   
   def parseLine(self,line,context):
     if line.startswith("#"):
       return
     if re.search(self.__search,line) == None:
       return
-    cleanLine = re.sub("(?:_[0-9]{1,2})*(?=[)_ ])","",line.strip())                      # Stripping the api version part if exists
+    cleanLine = line.strip()
+    if self.__strip: 
+      cleanLine = re.sub("(?:_[0-9]{1,2})*(?=[)_ ])","",cleanLine)                       # Stripping the api version part if exists
     if context == "file":                                                                # Parse the information according to the context (filename)
       self.__fillFile(cleanLine)
     elif context == "hwservice":
@@ -41,36 +46,82 @@ class SEPolicy:
   
   def optimize(self):
     self.__attributes = list(dict.fromkeys(self.__attributes))                           # Optimize all lists and remove duplicates
-    self.__properties = list(dict.fromkeys(self.__properties))
-    self.__services = list(dict.fromkeys(self.__services))
-    self.__hwservices = list(dict.fromkeys(self.__hwservices))
-    self.__genfs = list(dict.fromkeys(self.__genfs))
-    self.__files = list(dict.fromkeys(self.__files))
+    self.__properties = sorted(list(dict.fromkeys(self.__properties)))
+    self.__services = sorted(list(dict.fromkeys(self.__services)))
+    self.__hwservices = sorted(list(dict.fromkeys(self.__hwservices)))
+    self.__genfs = sorted(list(dict.fromkeys(self.__genfs)))
+    self.__files = sorted(list(dict.fromkeys(self.__files)))
     self.__transitions = list(dict.fromkeys(self.__transitions))
-    self.__rules = list(dict.fromkeys(self.__rules))
+    self.__rules = sorted(list(dict.fromkeys(self.__rules)))
     self.__remainings = list(dict.fromkeys(self.__remainings))
-    self.__foreigns = list(dict.fromkeys(self.__foreigns))
+    self.__foreigns = sorted(list(dict.fromkeys(self.__foreigns)))
     for key in self.__types:                                                             # Same goes for the typeattributes
       self.__types[key] = list(dict.fromkeys(self.__types[key]))
-    try:                                                                                 # Try to find all parts of the "init_daemon_macro" ...
+    self.__optimize_domain();
+    self.__optimize_binder();
+    self.__optimize_hwbinder();
+    
+  def __optimize_domain(self):  
+    index_foreigns = []
+    try:                                                                                 # Try to find all parts of the "init_daemon" macro ...
       index_transition = self.__transitions.index(f"type_transition init {self.__typename}_exec:process {self.__typename};")
-      index_file = self.__foreigns.index(f"allow init {self.__typename}_exec:file {{read getattr map execute open}};")
-      index_process = self.__foreigns.index(f"allow init {self.__typename}:process {{transition}};")
-      index_exec = self.__rules.index(f"allow {self.__typename} {self.__typename}_exec:file {{read getattr map execute entrypoint open}};")
-      index_dontaudit = self.__foreigns.index(f"dontaudit init {self.__typename}:process {{noatsecure}};")
-      index_signal = self.__foreigns.index(f"allow init {self.__typename}:process {{siginh rlimitinh}};")
-      self.__foreigns.pop(index_signal)                                                  # ... and combine them ...
-      self.__foreigns.pop(index_dontaudit)
-      self.__rules.pop(index_exec)
-      self.__foreigns.pop(index_process)
-      self.__foreigns.pop(index_file)
+      index_foreigns.append(self.__foreigns.index(f"allow init {self.__typename}_exec:file {{read getattr map execute open}};"))
+      index_foreigns.append(self.__foreigns.index(f"allow init {self.__typename}:process {{transition}};"))
+      index_rules = self.__rules.index(f"allow {self.__typename} {self.__typename}_exec:file {{read getattr map execute entrypoint open}};")
+      index_foreigns.append(self.__foreigns.index(f"dontaudit init {self.__typename}:process {{noatsecure}};"))
+      index_foreigns.append(self.__foreigns.index(f"allow init {self.__typename}:process {{siginh rlimitinh}};"))
+      self.__rules.pop(index_rules)                                                      # ... and combine them ...
       self.__transitions.pop(index_transition)
+      index_foreigns = sorted(index_foreigns,reverse=True)
+      for index in index_foreigns: 
+        self.__foreigns.pop(index)                                                  
       self.__daemon = f"init_daemon_domain({self.__typename});"                          # ... into the macro itself
     except ValueError:
       self.__daemon = ""
+
+  def __optimize_binder(self):  
+    index_foreigns = []
+    try:                                                                                 # Try to find all parts of the "binder_use" macro ...
+      index_rules = self.__rules.index(f"allow {self.__typename} servicemanager:binder {{call transfer}};")
+      try:
+        index_foreigns.append(self.__foreigns.index(f"allow servicemanager {self.__typename}:binder {{call transfer}};"))
+      except ValueError:
+        pass
+      index_foreigns.append(self.__foreigns.index(f"allow servicemanager {self.__typename}:dir {{search}};"))
+      index_foreigns.append(self.__foreigns.index(f"allow servicemanager {self.__typename}:file {{read open}};"))
+      index_foreigns.append(self.__foreigns.index(f"allow servicemanager {self.__typename}:process {{getattr}};"))
+      self.__rules.pop(index_rules)                                                      # ... and combine them ...
+      index_foreigns = sorted(index_foreigns,reverse=True)
+      for index in index_foreigns: 
+        self.__foreigns.pop(index)                                                  
+      self.__binder = f"binder_use({self.__typename});"                                  # ... into the macro itself
+    except ValueError:
+      self.__binder = ""
+
+  def __optimize_hwbinder(self):  
+    index_foreigns = []
+    try:                                                                                 # Try to find all parts of the "hwbinder_use" macro ...
+      index_rules = self.__rules.index(f"allow {self.__typename} hwservicemanager:binder {{call transfer}};")
+      try:
+        index_foreigns.append(self.__foreigns.index(f"allow hwservicemanager {self.__typename}:binder {{call transfer}};"))
+      except ValueError:
+        pass
+      index_foreigns.append(self.__foreigns.index(f"allow hwservicemanager {self.__typename}:dir {{search}};"))
+      try:
+        index_foreigns.append(self.__foreigns.index(f"allow hwservicemanager {self.__typename}:file {{read open map}};"))
+      except ValueError:
+        index_foreigns.append(self.__foreigns.index(f"allow hwservicemanager {self.__typename}:file {{read map open}};"))
+      index_foreigns.append(self.__foreigns.index(f"allow hwservicemanager {self.__typename}:process {{getattr}};"))
+      self.__rules.pop(index_rules)                                                      # ... and combine them ...
+      index_foreigns = sorted(index_foreigns,reverse=True)
+      for index in index_foreigns: 
+        self.__foreigns.pop(index)                                                  
+      self.__hwbinder = f"hwbinder_use({self.__typename});"                              # ... into the macro itself
+    except ValueError:
+      self.__hwbinder = ""
       
-  def outputFile(self):
-    file = open(self.__typename+".te","wt")                                              # Output everything into one big *.te file per type
+  def outputFile(self,path):
+    file = open(path+self.__typename+".te","wt")                                         # Output everything into one big *.te file per type
     self.__outputArrayTitled(file,self.__attributes,"ATTRIBUTES")
     self.__outputArrayTitled(file,self.__files,"FILES")
     self.__outputArrayTitled(file,self.__properties,"PROPERTIES")
@@ -227,7 +278,7 @@ class SEPolicy:
   def __outputDictionary(self,file,dictionary):
     if len(dictionary) == 0:
       return
-    for key in dictionary:
+    for key in sorted(dictionary):
       file.write(f"type {str(key)}")
       for line in dictionary[key]:
         file.write(f", {line}")
@@ -238,8 +289,18 @@ class SEPolicy:
     if len(self.__types) > 0 or len(self.__transitions) > 0 or len(self.__rules) > 0:    # Output only if there is something to write
       file.write(f"##### {title} #####"+'\n')
       self.__outputDictionary(file,self.__types)
+      special = False
       if len(self.__daemon) > 0:
-        file.write(self.__daemon+'\n\n')
+        file.write(self.__daemon+'\n')
+        special = True
+      if len(self.__binder) > 0:
+        file.write(self.__binder+'\n')
+        special = True
+      if len(self.__hwbinder) > 0:
+        file.write(self.__hwbinder+'\n')
+        special = True
+      if special:
+        file.write('\n')
       self.__outputArray(file,self.__transitions)
       self.__outputArray(file,self.__rules)
     
@@ -251,6 +312,8 @@ class SEFileParser:
     self.__policy = policy
 
   def parseFile(self,name):                                                              # Parse one file
+    if "versioned" in name:
+      return
     context = self.__getContext(name)
     file = open(name,"rt")
     for line in file:
@@ -258,9 +321,8 @@ class SEFileParser:
     file.close();
 
   def parseFolder(self,name):                                                            # Parse all files in the folder
-    files = os.listdir(name)
+    files = glob.glob(name)
     for file in files:
-      file = name+file
       if os.path.isfile(file):
         self.parseFile(file)
         
@@ -277,16 +339,3 @@ class SEFileParser:
       return "sepolicy" 
 
 # END CLASS SEFileParser
-
-def main():
-  if len(sys.argv) != 2:
-    print("Wrong parameter count")
-    return
-  sepolicy = SEPolicy(sys.argv[1])
-  sefileparser = SEFileParser(sepolicy)
-  sefileparser.parseFolder("./stock/")
-  sepolicy.optimize()
-  sepolicy.outputFile()
-
-if __name__ == '__main__':
-    main()
