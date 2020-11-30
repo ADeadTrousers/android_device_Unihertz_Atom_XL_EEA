@@ -70,7 +70,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/default_volume_tables.xml
 
-PRODUCT_PACKAGES := \
+PRODUCT_PACKAGES += \
     libGLES_android \
     libaudioprocessing \
     libaudioflinger \

@@ -253,7 +253,7 @@ framework/mediatek-framework-net.jar
 #framework/oat/arm/mediatek-framework-net.vdex
 #framework/oat/arm64/mediatek-framework-net.odex
 #framework/oat/arm64/mediatek-framework-net.vdex
--framework/mediatek-res.apk
+#framework/mediatek-res.apk
 framework/mediatek-services.jar
 #framework/oat/arm/mediatek-services.odex
 #framework/oat/arm/mediatek-services.vdex
