@@ -1,1 +1,1 @@
-type lbs_dbg, domain, coredomain, halclientdomain, mtk_hal_lbs_client;
+type lbs_dbg_data_file, file_type, data_file_type, core_data_file_type;

@@ -1,4 +1,3 @@
-type modemdbfilter_client, domain, coredomain, halclientdomain, mtk_hal_md_dbfilter_client;
 type modemdbfilter_client_exec, file_type, exec_type, system_file_type;
 
 init_daemon_domain(modemdbfilter_client);

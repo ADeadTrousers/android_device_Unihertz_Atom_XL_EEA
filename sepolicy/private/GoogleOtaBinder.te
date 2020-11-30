@@ -1,5 +1,4 @@
 type GoogleOtaBinder_exec, file_type, exec_type, system_file_type;
-type ota_agent_service, service_manager_type;
 
 init_daemon_domain(GoogleOtaBinder);
 binder_use(GoogleOtaBinder);

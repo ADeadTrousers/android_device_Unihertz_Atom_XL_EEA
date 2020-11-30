@@ -1,4 +1,3 @@
-type usp_service, domain, coredomain;
 type usp_service_exec, file_type, exec_type, system_file_type;
 
 init_daemon_domain(usp_service);

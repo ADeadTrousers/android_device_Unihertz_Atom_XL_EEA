@@ -1,4 +1,3 @@
-type aee_core_forwarder, domain, coredomain;
 type aee_core_forwarder_exec, file_type, exec_type, system_file_type;
 
 init_daemon_domain(aee_core_forwarder);

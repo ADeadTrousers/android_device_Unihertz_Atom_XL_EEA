@@ -45,18 +45,18 @@ class SEPolicy:
       self.__remainings.append(cleanLine)
   
   def optimize(self):
-    self.__attributes = list(dict.fromkeys(self.__attributes))                           # Optimize all lists and remove duplicates
+    self.__attributes = sorted(list(dict.fromkeys(self.__attributes)))                   # Optimize all lists and remove duplicates
     self.__properties = sorted(list(dict.fromkeys(self.__properties)))
     self.__services = sorted(list(dict.fromkeys(self.__services)))
     self.__hwservices = sorted(list(dict.fromkeys(self.__hwservices)))
     self.__genfs = sorted(list(dict.fromkeys(self.__genfs)))
     self.__files = sorted(list(dict.fromkeys(self.__files)))
-    self.__transitions = list(dict.fromkeys(self.__transitions))
+    self.__transitions = sorted(list(dict.fromkeys(self.__transitions)))
     self.__rules = sorted(list(dict.fromkeys(self.__rules)))
-    self.__remainings = list(dict.fromkeys(self.__remainings))
+    self.__remainings = sorted(list(dict.fromkeys(self.__remainings)))
     self.__foreigns = sorted(list(dict.fromkeys(self.__foreigns)))
     for key in self.__types:                                                             # Same goes for the typeattributes
-      self.__types[key] = list(dict.fromkeys(self.__types[key]))
+      self.__types[key] = sorted(list(dict.fromkeys(self.__types[key])))
     self.__optimize_domain();
     self.__optimize_binder();
     self.__optimize_hwbinder();
@@ -278,12 +278,13 @@ class SEPolicy:
   def __outputDictionary(self,file,dictionary):
     if len(dictionary) == 0:
       return
+    texts = []
     for key in sorted(dictionary):
-      file.write(f"type {str(key)}")
+      text = f"type {str(key)}"
       for line in dictionary[key]:
-        file.write(f", {line}")
-      file.write(";"+'\n')
-    file.write('\n')
+        text = f"{text}, {line}"
+      texts.append(f"{text};")
+    self.__outputArray(file,sorted(texts))
 
   def __outputPolicies(self,file,title):
     if len(self.__types) > 0 or len(self.__transitions) > 0 or len(self.__rules) > 0:    # Output only if there is something to write

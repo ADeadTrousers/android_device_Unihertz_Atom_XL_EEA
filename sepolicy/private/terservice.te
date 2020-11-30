@@ -1,4 +1,3 @@
-type terservice, domain, binderservicedomain, coredomain;
 type terservice_exec, file_type, exec_type, system_file_type;
 type terservice_prop, property_type, extended_core_property_type;
 type terservice_service, service_manager_type;
