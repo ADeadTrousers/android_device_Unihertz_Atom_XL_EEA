@@ -13,16 +13,8 @@ etc/apns-conf.xml:product/etc/apns-conf.xml
 bin/vtservice
 etc/init/init.vtservice.rc
 etc/permissions/privapp-permissions-mediatek.xml
-framework/mediatek-ims-extension-plugin.jar
-#framework/oat/arm/mediatek-ims-extension-plugin.odex
-#framework/oat/arm/mediatek-ims-extension-plugin.vdex
-#framework/oat/arm64/mediatek-ims-extension-plugin.odex
-#framework/oat/arm64/mediatek-ims-extension-plugin.vdex
-framework/mediatek-ims-legacy.jar
-#framework/oat/arm/mediatek-ims-legacy.odex
-#framework/oat/arm/mediatek-ims-legacy.vdex
-#framework/oat/arm64/mediatek-ims-legacy.odex
-#framework/oat/arm64/mediatek-ims-legacy.vdex
+-framework/mediatek-ims-extension-plugin.jar
+-framework/mediatek-ims-legacy.jar
 lib/libcomutils.so
 lib/libimsma.so
 lib/libimsma_adapt.so
@@ -51,6 +43,13 @@ lib64/libmtkshifter.so
 lib64/libvcodec_cap.so
 lib64/libvcodec_capenc.so
 lib64/vendor.mediatek.hardware.videotelephony@1.0.so
+-framework/OPCommonTelephony.jar
+framework/arm/boot-OPCommonTelephony.art
+framework/arm/boot-OPCommonTelephony.oat
+framework/arm/boot-OPCommonTelephony.vdex
+framework/arm64/boot-OPCommonTelephony.art
+framework/arm64/boot-OPCommonTelephony.oat
+framework/arm64/boot-OPCommonTelephony.vdex
 
 # Atom XL radio
 -app/Intercom/Intercom.apk
@@ -248,31 +247,15 @@ lib/vendor.mediatek.hardware.pq@2.3.so
 lib/vendor.mediatek.hardware.camera.device@1.1.so
 lib/vendor.trustonic.teeregistry@1.0.so
 
-framework/mediatek-framework-net.jar
-#framework/oat/arm/mediatek-framework-net.odex
-#framework/oat/arm/mediatek-framework-net.vdex
-#framework/oat/arm64/mediatek-framework-net.odex
-#framework/oat/arm64/mediatek-framework-net.vdex
+-framework/mediatek-framework-net.jar
 #framework/mediatek-res.apk
-framework/mediatek-services.jar
-#framework/oat/arm/mediatek-services.odex
-#framework/oat/arm/mediatek-services.vdex
-#framework/oat/arm64/mediatek-services.odex
-#framework/oat/arm64/mediatek-services.vdex
-framework/mediatek-wfo-legacy.jar
-#framework/oat/arm/mediatek-wfo-legacy.odex
-#framework/oat/arm/mediatek-wfo-legacy.vdex
-#framework/oat/arm64/mediatek-wfo-legacy.odex
-#framework/oat/arm64/mediatek-wfo-legacy.vdex
-framework/mtk-wifi-service.jar
-#framework/oat/arm/mtk-wifi-service.odex
-#framework/oat/arm/mtk-wifi-service.vdex
-#framework/oat/arm64/mtk-wifi-service.odex
-#framework/oat/arm64/mtk-wifi-service.vdex
+-framework/mediatek-services.jar
+-framework/mediatek-wfo-legacy.jar
+-framework/mtk-wifi-service.jar
 lib/libaudioutilmtk.so
+lib/libaudio-resampler.so
 lib/libbessound_hd_mtk.so
 lib/libdrmmtkutil.so
-lib/libdrmmtkwhitelist.so
 lib/libmediatek_exceptionlog.so
 lib/libstagefright_wfd_mtk.so
 lib/libaudio_param_parser-sys.so
@@ -280,11 +263,13 @@ lib/libaudiocompensationfilter.so
 lib/libaudiocomponentengine.so
 lib/libaudiotoolkit.so
 lib64/libaudioutilmtk.so
+lib64/libaudio-resampler.so
 lib64/libbessound_hd_mtk.so
 lib64/libdrmmtkutil.so
 lib64/libdrmmtkwhitelist.so
 lib64/libmediatek_exceptionlog.so
 lib64/libmtkbluetooth_jni.so
+lib64/libusb
 #lib64/extractors/libmtkadpcmextractor.so
 #lib64/extractors/libmtkasfextractor.so
 #lib64/extractors/libmtkmkvextractor.so
@@ -320,7 +305,6 @@ lib/libcustom_jni.so
 lib/libcustom_prop.so
 lib/libdcfdecoderjni.so
 lib/libdisp_dejitter.so
-#lib/libdrm.so
 lib/libdtaNfaProvider.so
 lib/libeap-aka.so
 lib/libem_audio_jni.so
@@ -368,7 +352,6 @@ lib64/libcustom_jni.so
 lib64/libcustom_prop.so
 lib64/libdcfdecoderjni.so
 lib64/libdisp_dejitter.so
-#lib64/libdrm.so
 lib64/libdtaNfaProvider.so
 lib64/libeap-aka.so
 lib64/libem_audio_jni.so
@@ -414,12 +397,15 @@ lib64/libwapi_cert_jni.so
 #lib64/libclang_rt.hwasan-aarch64-android.so
 #lib64/libclang_rt.ubasan_standalone-aarch64-android.so
 
+data/dmr/DMR006.U4A.V076.bin
+data/mcu/20190904034623.bin
+data/mcu/20200423161457.bin
+data/mcu/20200508134341.bin
+data/mcu/20200812110328.bin
+data/mcu/20201016161541.bin
+
 -priv-app/AguiNfcEmulate/AguiNfcEmulate.apk
-framework/com.st.android.nfc_extensions.jar
-#framework/oat/arm/com.st.android.nfc_extensions.odex
-#framework/oat/arm/com.st.android.nfc_extensions.vdex
-#framework/oat/arm64/com.st.android.nfc_extensions.odex
-#framework/oat/arm64/com.st.android.nfc_extensions.vdex
+-framework/com.st.android.nfc_extensions.jar
 etc/init/hw/init.stnfc.rc
 etc/nfcee_access.xml
 etc/permissions/com.st.android.nfc_extensions.xml
@@ -446,12 +432,5 @@ lib64/libstnfc_nci_jni.so
 -app/com.tiqiaa.remote-423/com.tiqiaa.remote-423.apk
 app/com.tiqiaa.remote-423/lib/arm/libtiqiaadev.so
 app/com.tiqiaa.remote-423/lib/arm/libtiqiaautil.so
-
-#-priv-app/CMASReceiver/CMASReceiver.apk
-#priv-app/CMASReceiver/oat/arm64/CMASReceiver.odex
-#priv-app/CMASReceiver/oat/arm64/CMASReceiver.vdex
-#-app/CmasEM/CmasEM.apk
-#app/CmasEM/oat/arm64/CmasEM.odex
-#app/CmasEM/oat/arm64/CmasEM.vdex
 
 #-product/app/AguiToolbox/AguiToolbox.apk

@@ -79,7 +79,6 @@ PRODUCT_PACKAGES += \
     libstatssocket \
     libsparse \
     libdrm \
-    libusb \
     libpcap \
     libprotobuf-cpp-full \
     libbrotli \
@@ -100,8 +99,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@2.0 \
     android.hardware.audio.effect@4.0 \
     android.hardware.audio.effect@5.0 \
-    android.hardware.secure_element@1.0 \
-    android.hardware.secure_element@1.1 \
     android.hardware.audio@2.0 \
     android.hardware.audio@4.0 \
     android.hardware.audio@5.0 \
@@ -111,23 +108,28 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc@1.0 \
     android.hardware.nfc@1.1 \
     android.hardware.nfc@1.2 \
-    android.hardware.usb.gadget@1.0 \
-    android.hardware.oemlock@1.0 \
-    android.hardware.weaver@1.0 \
-    android.hardware.authsecret@1.0 \
     android.hardware.thermal@1.0 \
-    android.hardware.thermal@1.1 \
-    android.hardware.thermal@2.0 \
-    android.hardware.radio.deprecated@1.0 \
     android.hardware.radio@1.1 \
     android.hardware.radio@1.2 \
     android.hardware.radio@1.3 \
     android.hardware.radio@1.4 \
     android.hardware.vibrator@1.0 \
-    android.hardware.vibrator@1.3 \
-    vendor.lineage.touch@1.0 \
-    vendor.lineage.trust@1.0 \
-    vendor.lineage.livedisplay@2.0
+    android.hardware.vibrator@1.3
+
+#    libusb \
+#    vendor.lineage.touch@1.0 \
+#    vendor.lineage.trust@1.0 \
+#    vendor.lineage.livedisplay@2.0 \
+
+#    android.hardware.oemlock@1.0 \
+#    android.hardware.authsecret@1.0 \
+#    android.hardware.radio.deprecated@1.0 \
+#    android.hardware.secure_element@1.0 \
+#    android.hardware.secure_element@1.1 \
+#    android.hardware.thermal@1.1 \
+#    android.hardware.thermal@2.0 \
+#    android.hardware.usb.gadget@1.0 \
+#    android.hardware.weaver@1.0 \
 
 #    libclang_rt.hwasan-aarch64-android \
 #    libclang_rt.ubsan_standalone-aarch64-android \
