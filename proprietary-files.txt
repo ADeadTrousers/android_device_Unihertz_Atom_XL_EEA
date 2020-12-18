@@ -251,7 +251,6 @@ lib/vendor.trustonic.teeregistry@1.0.so
 -framework/mediatek-wfo-legacy.jar
 -framework/mtk-wifi-service.jar
 lib/libaudioutilmtk.so
-lib/libaudio-resampler.so
 lib/libbessound_hd_mtk.so
 lib/libdrmmtkutil.so
 lib/libmediatek_exceptionlog.so
@@ -261,7 +260,6 @@ lib/libaudiocompensationfilter.so
 lib/libaudiocomponentengine.so
 lib/libaudiotoolkit.so
 lib64/libaudioutilmtk.so
-lib64/libaudio-resampler.so
 lib64/libbessound_hd_mtk.so
 lib64/libdrmmtkutil.so
 lib64/libdrmmtkwhitelist.so
