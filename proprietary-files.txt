@@ -63,6 +63,12 @@ bin/extmodule
 bin/extcmdtest
 bin/dfu-util
 etc/init/extmodule.rc
+data/dmr/DMR006.U4A.V076.bin
+data/mcu/20190904034623.bin
+data/mcu/20200423161457.bin
+data/mcu/20200508134341.bin
+data/mcu/20200812110328.bin
+data/mcu/20201016161541.bin
 
 bin/aee
 bin/aee_aed
@@ -393,13 +399,6 @@ lib64/libwapi_cert_jni.so
 #lib64/libclang_rt.hwasan-aarch64-android.so
 #lib64/libclang_rt.ubasan_standalone-aarch64-android.so
 
-data/dmr/DMR006.U4A.V076.bin
-data/mcu/20190904034623.bin
-data/mcu/20200423161457.bin
-data/mcu/20200508134341.bin
-data/mcu/20200812110328.bin
-data/mcu/20201016161541.bin
-
 #-priv-app/AguiNfcEmulate/AguiNfcEmulate.apk
 -framework/com.st.android.nfc_extensions.jar
 etc/init/hw/init.stnfc.rc
@@ -425,8 +424,21 @@ lib64/libstnfc_nci_jni.so
 #product/priv-app/ASOS/lib/arm64/libAMapSDK_MAP_v6_9_0.so
 #product/etc/permissions/com.agui.newsos.xml
 
--app/com.tiqiaa.remote-423/com.tiqiaa.remote-423.apk
-app/com.tiqiaa.remote-423/lib/arm/libtiqiaadev.so
-app/com.tiqiaa.remote-423/lib/arm/libtiqiaautil.so
+#-app/com.tiqiaa.remote-423/com.tiqiaa.remote-423.apk
+#app/com.tiqiaa.remote-423/lib/arm/libBaiduMapSDK_base_v5_2_1.so
+#app/com.tiqiaa.remote-423/lib/arm/libBaiduMapSDK_map_v5_2_1.so
+#app/com.tiqiaa.remote-423/lib/arm/libBLNetwork.so
+#app/com.tiqiaa.remote-423/lib/arm/libbspatch.so
+#app/com.tiqiaa.remote-423/lib/arm/libcocklogic-1.1.3.so
+#app/com.tiqiaa.remote-423/lib/arm/libjnihello.so
+#app/com.tiqiaa.remote-423/lib/arm/liblocSDK7b.so
+#app/com.tiqiaa.remote-423/lib/arm/libmsc.so
+#app/com.tiqiaa.remote-423/lib/arm/libpl_droidsonroids_gif.so
+#app/com.tiqiaa.remote-423/lib/arm/libserphone.so
+#app/com.tiqiaa.remote-423/lib/arm/libsgmain.so
+#app/com.tiqiaa.remote-423/lib/arm/libtiqiaadev.so
+#app/com.tiqiaa.remote-423/lib/arm/libtiqiaautil.so
+#app/com.tiqiaa.remote-423/lib/arm/libtnet-2.1.20.1-agoo.so
+#app/com.tiqiaa.remote-423/lib/arm/libtnet-3.1.11.so
 
 #-product/app/AguiToolbox/AguiToolbox.apk
