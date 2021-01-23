@@ -1,4 +1,4 @@
-How to Update LineageOS 17.1 for the Unihertz Atom XL (Atom_XL)
+How to update LineageOS 17.1 for the Unihertz Atom XL (Atom_XL)
 =================================================
 
 Every piece of software should allways kept up-to-date. Therefore even this ROM get updates from time to time and you should allways apply these to your device.
