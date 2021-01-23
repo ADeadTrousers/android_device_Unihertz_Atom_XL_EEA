@@ -26,7 +26,7 @@ In this guide I'll use Windows cause honestly that's the only way I know of and 
 
 ## Flashing the Stock ROM
 
-[](images/spflash.png)
+![](images/spflash.png)
 
 Since the time Unihertz created their [instructions to flash a ROM](https://drive.google.com/drive/folders/0By1nhWOmuw2KdDhTUlFOZHpXQjg?sort=13&direction=a) and now a lot has changed in the SP Flash Tool. Gone are all those unnecessary port scans.
 

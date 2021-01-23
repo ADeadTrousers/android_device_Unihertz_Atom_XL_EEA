@@ -5,6 +5,8 @@ If you are looking for a special device tree for the usage in a TWRP or similar 
 
 The Unihertz Atom XL (codenamed simply _"Atom_XL"_) is a rugged small smartphone from Unihertz, released in July 2020. It is similar to the Atom L but with integrated amateur radio support.
 
+![](docs/images/atom_xl.png)
+
 ~~The following patche is needed to build a working image of LineageOS:~~
 
 ~~<https://review.potatoproject.co/c/PotatoProject/frameworks_base/+/4850>~~
