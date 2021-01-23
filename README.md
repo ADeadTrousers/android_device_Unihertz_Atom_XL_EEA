@@ -7,12 +7,6 @@ The Unihertz Atom XL (codenamed simply _"Atom_XL"_) is a rugged small smartphone
 
 ![](docs/images/atom_xl.png)
 
-~~The following patche is needed to build a working image of LineageOS:~~
-
-~~<https://review.potatoproject.co/c/PotatoProject/frameworks_base/+/4850>~~
-
-Patches needed for this to work have already been merged to LineageOS as change [282359](https://review.lineageos.org/c/LineageOS/android_frameworks_base/+/282359) and change [282360](https://review.lineageos.org/c/LineageOS/android_frameworks_opt_net_wifi/+/282360).
-
 | Basic                   | Spec Sheet                                                                                                                     |
 | -----------------------:|:------------------------------------------------------------------------------------------------------------------------------ |
 | CPU                     | Octa-core                                                                                                                      |
