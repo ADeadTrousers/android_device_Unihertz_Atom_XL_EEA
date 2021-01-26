@@ -36,6 +36,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap
 
+# FM Radio
+PRODUCT_PACKAGES += \
+    FMRadio
+
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
