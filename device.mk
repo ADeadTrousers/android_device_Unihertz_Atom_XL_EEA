@@ -62,6 +62,10 @@ PRODUCT_PACKAGES += \
     init.mt6771.rc \
     fstab.mt6771
 
+# Magisk
+PRODUCT_PACKAGES += \
+    MagiskManager
+
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_configuration_bluetooth_legacy_hal.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_policy_configuration_bluetooth_legacy_hal.xml \

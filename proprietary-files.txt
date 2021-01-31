@@ -71,6 +71,9 @@ data/mcu/20200508134341.bin
 data/mcu/20200812110328.bin
 data/mcu/20201016161541.bin
 
+#product/lib/libfmjni.so:system/lib/libfmjni.so
+#product/lib64/libfmjni.so:system/lib64/libfmjni.so
+
 bin/aee
 bin/aee_aed
 bin/aee_aed64
