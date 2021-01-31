@@ -79,7 +79,7 @@ The get LineageOS to boot proberly we also need to disable AV. Otherwise the boo
 
 ## Installing LineageOS ROM
 
-1. Download `lineage-17.1-XXX-UNOFFICIAL-Atom_XL.zip` from [the latest release](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL/releases).
+1. Download `lineage-17.1-XXX-UNOFFICIAL-Atom_XL-signed.zip` from [the latest release](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL/releases).
 2. Connect your phone to your PC and open a terminal or a command line window.
 3. Run `adb reboot recovery` on your PC or simply hold volume up while turning power on to boot your device into the recovery.
 4. In TWRP select `Wipe > Advanced Wipe`.

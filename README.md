@@ -27,7 +27,8 @@ The Unihertz Atom XL (codenamed simply _"Atom_XL"_) is a rugged small smartphone
 - [HOW-TO-UPDATE.md](docs/HOW-TO-UPDATE.md) - Update instructions for the Atom XL.
 - [HOW-TO-EXTRACT_FILES.md](docs/HOW-TO-EXTRACT_FILES.md) - Instructions to extract files directly from the Atom XL stock rom files.
 - [HOW-TO-EXTRACT_SEPOLICY.md](docs/HOW-TO-EXTRACT_SEPOLICY.md) - A little guide to extract sepolicy rules from stock or phone.
-- [HOW-TO-SPFLASH.md](docs/HOW-TO-SPFLASH.md) - Instructions on how to use the SP Flash Tool for MTK based devices.
+- [HOW-TO-FLASH-STOCK.md](docs/HOW-TO-FLASH-STOCK.md) - Instructions on how to use the SP Flash Tool for MTK based devices.
+- [HOW-TO-FLASH-SUPER.md](docs/HOW-TO-FLASH-SUPER.md) - Modifying super.img and flashing it onto the device.
 
 ## Special Thanks To
 

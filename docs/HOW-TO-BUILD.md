@@ -197,7 +197,7 @@ If you don't want to include GAPPS at all or want to change the apps to be insta
 
 ### Use imjtool (formerly known as imgtool) to extract from stock rom files
 
-First follow [the instructions to extract and mount the stock rom files](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL/blob/master/docs/HOW-TO-EXTRACT_FILES.md) 
+First follow [the instructions to extract and mount the stock rom files](HOW-TO-EXTRACT_FILES.md) 
 
 Then extract all the files we need
 
