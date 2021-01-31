@@ -4,14 +4,19 @@ How to modify super.img and then flash it onto the device.
 For some reason I don't know of yet the install script won't be able to change the partition size inside `super.img`. 
 When this happens the recovery will only schon an error 7 mentioning an "assert failure" with `dynamic_partitions_op_list`.
 To overcome this problem you need to change the partiton layout manually on your computer and then flash the whole `super.img` back onto the device.
+For convinience this whole guide will use 
 
 ## Installing needed utilities
+
+### Install brotli
 
 First of you need brotli to uncompress the image files
 
 ```bash
 sudo apt install brotli
 ```
+
+### Install lpmake
 
 Make sure lpmake is build
 
@@ -20,6 +25,38 @@ cd ~/android/lineage
 source build/envsetup.sh
 breakfast Atom_XL
 make lpmake
+```
+
+### Install sdat2img.py
+
+Download sdat2img.py
+
+```bash
+mkdir -p ~/bin
+cd ~/bin
+wget https://raw.githubusercontent.com/xpirt/sdat2img/master/sdat2img.py
+chmod 755 sdat2img.py
+```
+
+Update your PATH variable for your environment
+
+```bash
+gedit ~/.profile
+```
+	
+Add the following
+	
+```bash
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+  PATH="$HOME/bin:$PATH"
+fi	
+```
+
+Then update your environment
+
+```bash
+source ~/.profile
 ```
 
 ## Extracting image files from stock rom files
@@ -38,6 +75,13 @@ Then we need to extract the brotli compressed files
 ```bash
 brotli --decompress system.new.dat.br -o system.new.dat
 brotli --decompress product.new.dat.br -o product.new.dat
+```
+
+Finally we need to create real ext4 image files for further useage
+
+```bash
+sdat2img.py system.transfer.list system.new.dat system.img
+sdat2img.py product.transfer.list product.new.dat product.img
 ```
 
 ## (optional) Modifying system.new.dat and product.new.dat
@@ -67,9 +111,9 @@ With these number we are now able to create the `super.img`
  --metadata-slots 1 \
  --device super:4831838208 \
  --group main:4429828096 \
- --partition system:readonly:3380654080:main --image system=./system.new.dat \
+ --partition system:readonly:3380654080:main --image system=./system.img \
  --partition vendor:readonly:349093888:main --image vendor=./vendor.img \
- --partition product:readonly:700080128:main --image product=./product.new.dat \
+ --partition product:readonly:700080128:main --image product=./product.img \
  --sparse \
  --output ./super.img
 ```
