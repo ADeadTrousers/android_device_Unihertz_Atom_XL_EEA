@@ -36,11 +36,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap
 
-# FM Radio
+# FMRadio
 PRODUCT_PACKAGES += \
     FMRadio \
     libfmcust
-
+    
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
@@ -86,6 +86,7 @@ PRODUCT_PACKAGES += \
     libGLES_android \
     libaudioprocessing \
     libaudioflinger \
+    libaudio-resampler \
     libcameraservice \
     libsuspend \
     libstatssocket \

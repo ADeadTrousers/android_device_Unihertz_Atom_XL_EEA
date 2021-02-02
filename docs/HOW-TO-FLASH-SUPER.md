@@ -4,7 +4,6 @@ How to modify super.img and then flash it onto the device.
 For some reason I don't know of yet the install script won't be able to change the partition size inside `super.img`. 
 When this happens the recovery will only schon an error 7 mentioning an "assert failure" with `dynamic_partitions_op_list`.
 To overcome this problem you need to change the partiton layout manually on your computer and then flash the whole `super.img` back onto the device.
-For convinience this whole guide will use 
 
 ## Installing needed utilities
 
@@ -95,8 +94,8 @@ First we need to get the exact sizes of all the image files
 
 ```bash
 stat -c '%n %s' vendor.img
-stat -c '%n %s' system.new.dat
-stat -c '%n %s' product.new.dat
+stat -c '%n %s' system.img
+stat -c '%n %s' product.img
 ```
 
 Alternativly you could also use the filesizes from the zip archive in `dynamic_partitions_op_list`. 
@@ -110,10 +109,10 @@ With these number we are now able to create the `super.img`
  --super-name super \
  --metadata-slots 1 \
  --device super:4831838208 \
- --group main:4429828096 \
- --partition system:readonly:3380654080:main --image system=./system.img \
+ --group main:4432629760 \
+ --partition system:readonly:3384295424:main --image system=./system.img \
  --partition vendor:readonly:349093888:main --image vendor=./vendor.img \
- --partition product:readonly:700080128:main --image product=./product.img \
+ --partition product:readonly:699240448:main --image product=./product.img \
  --sparse \
  --output ./super.img
 ```

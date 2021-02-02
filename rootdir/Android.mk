@@ -23,11 +23,10 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE         := libfmcust
-LOCAL_MODULE_SUFFIX  :=.so
+LOCAL_MODULE_SUFFIX  := .so
 LOCAL_MODULE_CLASS   := SHARED_LIBRARIES
 LOCAL_MODULE_TAGS    := optional
 LOCAL_PRELINK_MODULE := false
-LOCAL_PRODUCT_MODULE := true
 ifdef TARGET_2ND_ARCH
 LOCAL_MULTILIB       := both
 LOCAL_SRC_FILES_64   := lib64/libfmcust.so
@@ -35,4 +34,14 @@ LOCAL_SRC_FILES_32   := lib/libfmcust.so
 else
 LOCAL_SRC_FILES      := lib/libfmcust.so
 endif
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE         := mediatek-res
+LOCAL_MODULE_SUFFIX  := .apk
+LOCAL_MODULE_CLASS   := ETC
+LOCAL_MODULE_TAGS    := optional
+LOCAL_CERTIFICATE    := PRESIGNED
+LOCAL_SRC_FILES      := framework/mediatek-res.apk
+LOCAL_MODULE_PATH    := $(TARGET_OUT)/system/framework
 include $(BUILD_PREBUILT)

@@ -71,8 +71,12 @@ data/mcu/20200508134341.bin
 data/mcu/20200812110328.bin
 data/mcu/20201016161541.bin
 
-#product/lib/libfmjni.so:system/lib/libfmjni.so
-#product/lib64/libfmjni.so:system/lib64/libfmjni.so
+#product/lib/libfmjni.so
+#product/lib64/libfmjni.so
+#-product/priv-app/FMRadio/FMRadio.apk
+#product/etc/permissions/product-permissions-mediatek.xml
+#product/priv-app/FMRadio/oat/arm64/FMRadio.odex
+#product/priv-app/FMRadio/oat/arm64/FMRadio.vdex
 
 bin/aee
 bin/aee_aed
@@ -256,7 +260,7 @@ lib/vendor.mediatek.hardware.camera.device@1.1.so
 lib/vendor.trustonic.teeregistry@1.0.so
 
 -framework/mediatek-framework-net.jar
-#framework/mediatek-res.apk
+#-framework/mediatek-res.apk:system/framework/mediatek-res.apk
 -framework/mediatek-services.jar
 -framework/mediatek-wfo-legacy.jar
 -framework/mtk-wifi-service.jar
@@ -275,15 +279,6 @@ lib64/libdrmmtkutil.so
 lib64/libdrmmtkwhitelist.so
 lib64/libmediatek_exceptionlog.so
 lib64/libmtkbluetooth_jni.so
-#lib64/extractors/libmtkadpcmextractor.so
-#lib64/extractors/libmtkasfextractor.so
-#lib64/extractors/libmtkmkvextractor.so
-#lib64/extractors/libmtkalacextractor.so
-#lib64/extractors/libmtkaviextractor.so
-#lib64/extractors/libmtkmp3extractor.so
-#lib64/extractors/libmtkapeextractor.so
-#lib64/extractors/libmtkflvextractor.so
-#lib64/extractors/libmtkmpeg2extractor.so
 lib64/libaudio_param_parser-sys.so
 lib64/libaudiocompensationfilter.so
 lib64/libaudiocomponentengine.so
@@ -298,6 +293,17 @@ framework/via-plugin.jar
 framework/log-handler.jar
 framework/CapCtrlInterface.jar
 framework/CustomPropInterface.jar
+xbin/trace
+
+#lib64/extractors/libmtkadpcmextractor.so
+#lib64/extractors/libmtkasfextractor.so
+#lib64/extractors/libmtkmkvextractor.so
+#lib64/extractors/libmtkalacextractor.so
+#lib64/extractors/libmtkaviextractor.so
+#lib64/extractors/libmtkmp3extractor.so
+#lib64/extractors/libmtkapeextractor.so
+#lib64/extractors/libmtkflvextractor.so
+#lib64/extractors/libmtkmpeg2extractor.so
 
 lib/libMcRegistry.so
 lib/libPQDCjni.so
@@ -346,6 +352,7 @@ lib/libui_ext.so
 lib/libvsync_enhance.so
 lib/libvsync_hint.so
 lib/libwapi_cert_jni.so
+lib/libdrmmtkwhitelist.so
 lib64/libMcRegistry.so
 lib64/libPQDCjni.so
 lib64/libPQjni.so
