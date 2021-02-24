@@ -35,13 +35,3 @@ else
 LOCAL_SRC_FILES      := lib/libfmcust.so
 endif
 include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE         := mediatek-res
-LOCAL_MODULE_SUFFIX  := .apk
-LOCAL_MODULE_CLASS   := ETC
-LOCAL_MODULE_TAGS    := optional
-LOCAL_CERTIFICATE    := PRESIGNED
-LOCAL_SRC_FILES      := framework/mediatek-res.apk
-LOCAL_MODULE_PATH    := $(TARGET_OUT)/system/framework
-include $(BUILD_PREBUILT)

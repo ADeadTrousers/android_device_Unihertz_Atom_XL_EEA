@@ -78,10 +78,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/default_volume_tables.xml
 
-#    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_policy_configuration.xml \
-#    $(LOCAL_PATH)/audio/audio_policy_configuration_bluetooth_legacy_hal.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_policy_configuration_bluetooth_legacy_hal.xml \
-#    $(LOCAL_PATH)/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_policy_volumes.xml \
-
 PRODUCT_PACKAGES += \
     libGLES_android \
     libaudioprocessing \
@@ -128,24 +124,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.4 \
     android.hardware.vibrator@1.0 \
     android.hardware.vibrator@1.3
-
-#    libusb \
-#    vendor.lineage.touch@1.0 \
-#    vendor.lineage.trust@1.0 \
-#    vendor.lineage.livedisplay@2.0 \
-
-#    android.hardware.oemlock@1.0 \
-#    android.hardware.authsecret@1.0 \
-#    android.hardware.radio.deprecated@1.0 \
-#    android.hardware.secure_element@1.0 \
-#    android.hardware.secure_element@1.1 \
-#    android.hardware.thermal@1.1 \
-#    android.hardware.thermal@2.0 \
-#    android.hardware.usb.gadget@1.0 \
-#    android.hardware.weaver@1.0 \
-
-#    libclang_rt.hwasan-aarch64-android \
-#    libclang_rt.ubsan_standalone-aarch64-android \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \

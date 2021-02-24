@@ -36,7 +36,3 @@ GAPPS_PRODUCT_PACKAGES += \
     TagGoogle \
     Wallpapers \
     WebViewGoogle
-    
-#   DialerFramework         allready part of pico
-#   GoogleTTS               allready part of pico
-#   PackageInstallerGoogle  allready part of pico

@@ -71,13 +71,6 @@ data/mcu/20200508134341.bin
 data/mcu/20200812110328.bin
 data/mcu/20201016161541.bin
 
-#product/lib/libfmjni.so
-#product/lib64/libfmjni.so
-#-product/priv-app/FMRadio/FMRadio.apk
-#product/etc/permissions/product-permissions-mediatek.xml
-#product/priv-app/FMRadio/oat/arm64/FMRadio.odex
-#product/priv-app/FMRadio/oat/arm64/FMRadio.vdex
-
 bin/aee
 bin/aee_aed
 bin/aee_aed64
@@ -126,8 +119,6 @@ bin/move_widevine_data.sh
 bin/notify_traceur.override.sh
 bin/oem-iptables-init.sh
 bin/rtt
-#bin/badblocks
-#bin/vintf
 
 etc/init/hw/vendor_init_as_system.rc
 etc/init/init.connectivity.rc
@@ -260,7 +251,6 @@ lib/vendor.mediatek.hardware.camera.device@1.1.so
 lib/vendor.trustonic.teeregistry@1.0.so
 
 -framework/mediatek-framework-net.jar
-#-framework/mediatek-res.apk:system/framework/mediatek-res.apk
 -framework/mediatek-services.jar
 -framework/mediatek-wfo-legacy.jar
 -framework/mtk-wifi-service.jar
@@ -294,16 +284,6 @@ framework/log-handler.jar
 framework/CapCtrlInterface.jar
 framework/CustomPropInterface.jar
 xbin/trace
-
-#lib64/extractors/libmtkadpcmextractor.so
-#lib64/extractors/libmtkasfextractor.so
-#lib64/extractors/libmtkmkvextractor.so
-#lib64/extractors/libmtkalacextractor.so
-#lib64/extractors/libmtkaviextractor.so
-#lib64/extractors/libmtkmp3extractor.so
-#lib64/extractors/libmtkapeextractor.so
-#lib64/extractors/libmtkflvextractor.so
-#lib64/extractors/libmtkmpeg2extractor.so
 
 lib/libMcRegistry.so
 lib/libPQDCjni.so
@@ -404,12 +384,6 @@ lib64/libvsync_enhance.so
 lib64/libvsync_hint.so
 lib64/libwapi_cert_jni.so
 
-#lib/libclang_rt.hwasan-aarch64-android.so
-#lib/libclang_rt.ubasan_standalone-aarch64-android.so
-#lib64/libclang_rt.hwasan-aarch64-android.so
-#lib64/libclang_rt.ubasan_standalone-aarch64-android.so
-
-#-priv-app/AguiNfcEmulate/AguiNfcEmulate.apk
 -framework/com.st.android.nfc_extensions.jar
 etc/init/hw/init.stnfc.rc
 etc/nfcee_access.xml
@@ -424,31 +398,3 @@ lib64/libnfc_st_dta.so
 lib64/libnfc_st_dta_jni.so
 lib64/libstnfc-nci.so
 lib64/libstnfc_nci_jni.so
-#-app/Nfc_st/Nfc_st.apk
-#app/Nfc_st/lib/arm64/libstnfc_nci_jni.so
-#app/Nfc_st/lib/arm64/libnfc_st_dta_jni.so
-
-#-product/priv-app/ASOS/ASOS.apk
-#product/priv-app/ASOS/oat/arm64/ASOS.odex
-#product/priv-app/ASOS/oat/arm64/ASOS.vdex
-#product/priv-app/ASOS/lib/arm64/libAMapSDK_MAP_v6_9_0.so
-#product/etc/permissions/com.agui.newsos.xml
-
-#-app/com.tiqiaa.remote-423/com.tiqiaa.remote-423.apk
-#app/com.tiqiaa.remote-423/lib/arm/libBaiduMapSDK_base_v5_2_1.so
-#app/com.tiqiaa.remote-423/lib/arm/libBaiduMapSDK_map_v5_2_1.so
-#app/com.tiqiaa.remote-423/lib/arm/libBLNetwork.so
-#app/com.tiqiaa.remote-423/lib/arm/libbspatch.so
-#app/com.tiqiaa.remote-423/lib/arm/libcocklogic-1.1.3.so
-#app/com.tiqiaa.remote-423/lib/arm/libjnihello.so
-#app/com.tiqiaa.remote-423/lib/arm/liblocSDK7b.so
-#app/com.tiqiaa.remote-423/lib/arm/libmsc.so
-#app/com.tiqiaa.remote-423/lib/arm/libpl_droidsonroids_gif.so
-#app/com.tiqiaa.remote-423/lib/arm/libserphone.so
-#app/com.tiqiaa.remote-423/lib/arm/libsgmain.so
-#app/com.tiqiaa.remote-423/lib/arm/libtiqiaadev.so
-#app/com.tiqiaa.remote-423/lib/arm/libtiqiaautil.so
-#app/com.tiqiaa.remote-423/lib/arm/libtnet-2.1.20.1-agoo.so
-#app/com.tiqiaa.remote-423/lib/arm/libtnet-3.1.11.so
-
-#-product/app/AguiToolbox/AguiToolbox.apk
