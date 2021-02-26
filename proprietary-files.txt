@@ -9,6 +9,7 @@ lib64/libwebrtc_agc.so
 lib64/libwebrtc_vad.so
 lib64/libwebrtc_aecm.so
 lib64/libusb
+bin/auto_update
 bin/extmodule
 bin/extcmdtest
 bin/dfu-util
