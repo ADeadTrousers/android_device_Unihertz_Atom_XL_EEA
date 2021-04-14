@@ -3,12 +3,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/Unihertz/Atom_XL
+-include device/Unihertz/Atom_XL/BoardConfigCommon.mk
 
--include device/Unihertz/Atom_LXL/BoardConfigCommon.mk
+DEVICE_REGION_PATH := device/Unihertz/Atom_XL_EEA
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
-    $(DEVICE_PATH)/sepolicy/private
-
-# Properties
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
+# Kernel
+TARGET_PREBUILT_KERNEL := $(DEVICE_REGION_PATH)/prebuilt/Image.gz
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_REGION_PATH)/prebuilt/dtbo.img
+BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_REGION_PATH)/prebuilt/dtb
