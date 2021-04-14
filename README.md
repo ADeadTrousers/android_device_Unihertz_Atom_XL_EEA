@@ -1,6 +1,7 @@
 Device configuration for Unihertz Atom XL (Atom_XL) EEA (european union)
 =================================================
-This model device tree is intended for the usage in a LineageOS or similar building environment.
+This region device tree is intended for the usage in a LineageOS or similar building environment.
+
 If you are looking for a special device tree for the usage in a TWRP or similar environment head over to https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_LXL.
 
 The Unihertz Atom XL (codenamed simply _"Atom_XL"_) is a rugged small smartphone from Unihertz, released in July 2020. It is similar to the Atom L but with an integrated digital mobile radio (DMR).
@@ -28,7 +29,7 @@ Additionally to this region device tree, you'll need the common device tree
 
 and the model device tree
 
-- [Atom XL Model)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL)
+- [Atom XL (model)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL)
 
 ## Documentations
 
