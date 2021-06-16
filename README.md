@@ -36,6 +36,7 @@ and the model device tree
 - [HOW-TO-BUILD.md](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_LXL/blob/master/docs/HOW-TO-BUILD.md) - Building instructions for LineageOS 17.1.
 - [HOW-TO-INSTALL.md](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_LXL/blob/master/docs/HOW-TO-INSTALL.md) - Installation instructions for the Atom L/XL.
 - [HOW-TO-UPDATE.md](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_LXL/blob/master/docs/HOW-TO-UPDATE.md) - Update instructions for the Atom L/XL.
+- [HOW-TO-UPGRADE.md](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_LXL/blob/master/docs/HOW-TO-UPGRADE.md) - Upgrade instructions for the vendor portion of the Atom L/XL.
 - [HOW-TO-EXTRACT_FILES.md](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_LXL/blob/master/docs/HOW-TO-EXTRACT_FILES.md) - Instructions to extract files directly from the Atom L/XL stock rom files.
 - [HOW-TO-EXTRACT_SEPOLICY.md](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_LXL/blob/master/docs/HOW-TO-EXTRACT_SEPOLICY.md) - A little guide to extract sepolicy rules from stock or phone.
 - [HOW-TO-FLASH-STOCK.md](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_LXL/blob/master/docs/HOW-TO-FLASH-STOCK.md) - Instructions on how to use the SP Flash Tool for MTK based devices.
